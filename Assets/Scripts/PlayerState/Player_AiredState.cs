@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_AiredState : EntityState
+public class Player_AiredState : PlayerState
 {
     public Player_AiredState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -11,7 +11,7 @@ public class Player_AiredState : EntityState
         base.Update();
 
         if (player.moveInput.x != 0)
-            player.SetVelocity(player.moveInput.x * (player.runSpeed * player.inAirMoveMultiplier), rigidbody.linearVelocity.y);
+            player.SetVelocity(player.moveInput.x * (player.runSpeed * player.inAirMoveMultiplier), rb.linearVelocity.y);
 
         if (input.Player.Attack.WasPressedThisFrame())
             stateMachine.ChangeState(player.jumpAttackState);

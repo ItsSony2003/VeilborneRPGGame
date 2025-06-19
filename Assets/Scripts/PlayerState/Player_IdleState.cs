@@ -10,7 +10,7 @@ public class Player_IdleState : Player_GroundState //EntityState
     {
         base.Enter();
 
-        player.SetVelocity(0, rigidbody.linearVelocity.y);
+        player.SetVelocity(0, rb.linearVelocity.y);
     }
 
     public override void Update()

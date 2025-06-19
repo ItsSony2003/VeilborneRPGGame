@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_JumpAttackState : EntityState
+public class Player_JumpAttackState : PlayerState
 {
     private bool touchGround;
 
@@ -24,7 +24,7 @@ public class Player_JumpAttackState : EntityState
         {
             touchGround = true;
             anim.SetTrigger("jumpAttackTrigger");
-            player.SetVelocity(0, rigidbody.linearVelocity.y);
+            player.SetVelocity(0, rb.linearVelocity.y);
         }
 
         if (triggerCalled && player.groundDetected)

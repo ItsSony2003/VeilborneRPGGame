@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_DashState : EntityState
+public class Player_DashState : PlayerState
 {
     private float originalGravityScale;
     private int dashDirection;
@@ -16,8 +16,8 @@ public class Player_DashState : EntityState
         dashDirection = player.moveInput.x != 0 ? ((int)player.moveInput.x) : player.facingDirection;
         stateTimer = player.dashDuration;
 
-        originalGravityScale = rigidbody.gravityScale;
-        rigidbody.gravityScale = 0;
+        originalGravityScale = rb.gravityScale;
+        rb.gravityScale = 0;
     }
 
     public override void Update()
@@ -38,7 +38,7 @@ public class Player_DashState : EntityState
         base.Exit();
 
         player.SetVelocity(0, 0);
-        rigidbody.gravityScale = originalGravityScale;
+        rb.gravityScale = originalGravityScale;
     }
 
     private void CancelDash()

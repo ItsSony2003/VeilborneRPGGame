@@ -14,6 +14,6 @@ public class Player_RunState : Player_GroundState
         if (player.moveInput.x == 0 || player.wallDetected)
             stateMachine.ChangeState(player.idleState);
 
-        player.SetVelocity(player.moveInput.x * player.runSpeed, rigidbody.linearVelocity.y);
+        player.SetVelocity(player.moveInput.x * player.runSpeed, rb.linearVelocity.y);
     }
 }

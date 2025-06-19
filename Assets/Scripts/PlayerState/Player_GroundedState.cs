@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_GroundState : EntityState
+public class Player_GroundState : PlayerState
 {
     public Player_GroundState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -9,7 +9,7 @@ public class Player_GroundState : EntityState
     public override void Update()
     {
         base.Update();
-        if (rigidbody.linearVelocity.y < 0 && player.groundDetected == false)
+        if (rb.linearVelocity.y < 0 && player.groundDetected == false)
             stateMachine.ChangeState(player.fallState);
 
         if (input.Player.Jump.WasPressedThisFrame())

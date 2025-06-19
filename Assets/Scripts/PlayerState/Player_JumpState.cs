@@ -10,7 +10,7 @@ public class Player_JumpState : Player_AiredState
     {
         base.Enter();
 
-        player.SetVelocity(rigidbody.linearVelocity.x, player.jumpForce);
+        player.SetVelocity(rb.linearVelocity.x, player.jumpForce);
 
     }
 
@@ -19,7 +19,7 @@ public class Player_JumpState : Player_AiredState
         base.Update();
 
         // make sure we are not in jump attack state when we transfer to fall state
-        if ((rigidbody.linearVelocity.y < 0) && (stateMachine.currentState != player.jumpAttackState))
+        if ((rb.linearVelocity.y < 0) && (stateMachine.currentState != player.jumpAttackState))
             stateMachine.ChangeState(player.fallState);
     }
 }

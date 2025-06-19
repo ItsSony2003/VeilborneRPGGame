@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_WallJumpState : EntityState
+public class Player_WallJumpState : PlayerState
 {
     public Player_WallJumpState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -17,7 +17,7 @@ public class Player_WallJumpState : EntityState
     {
         base.Update();
 
-        if (rigidbody.linearVelocity.y < 0)
+        if (rb.linearVelocity.y < 0)
             stateMachine.ChangeState(player.fallState);
         
         if (player.wallDetected)

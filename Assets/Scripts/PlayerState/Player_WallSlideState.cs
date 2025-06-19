@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_WallSlideState : EntityState
+public class Player_WallSlideState : PlayerState
 {
     public Player_WallSlideState(Player player, StateMachine stateMachine, string animBoolName) : base(player, stateMachine, animBoolName)
     {
@@ -29,9 +29,9 @@ public class Player_WallSlideState : EntityState
     private void HandleWallSlide()
     {
         if (player.moveInput.y < 0)
-            player.SetVelocity(player.moveInput.x, rigidbody.linearVelocity.y);
+            player.SetVelocity(player.moveInput.x, rb.linearVelocity.y);
         else
-            player.SetVelocity(player.moveInput.x, rigidbody.linearVelocity.y * player.wallSlideSlowMultiplier);
+            player.SetVelocity(player.moveInput.x, rb.linearVelocity.y * player.wallSlideSlowMultiplier);
     }
 }
     
