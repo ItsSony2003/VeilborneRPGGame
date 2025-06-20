@@ -120852,9 +120852,13 @@ MonoBehaviour:
   secondWallCheck: {fileID: 0}
   battleMoveSpeed: 8
   attackDistance: 3
+  battleTimeDuration: 4
+  minRetreatDistance: 1.5
+  retreatVelocity: {x: 5, y: 3}
   idleTime: 2
-  moveSpeed: 5
-  moveAnimSpeedMultiplier: 0.75
+  moveSpeed: 4
+  moveAnimSpeedMultiplier: 0.85
+  battleAnimSpeedMultiplier: 1
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128

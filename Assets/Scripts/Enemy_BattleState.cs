@@ -3,6 +3,7 @@ using UnityEngine;
 public class Enemy_BattleState : EnemyState
 {
     private Transform player;
+    private float lastTimeInBattle;
 
     public Enemy_BattleState(Enemy enemy, StateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
     {
@@ -14,19 +15,37 @@ public class Enemy_BattleState : EnemyState
 
         if (player == null)
             player = enemy.PlayerDectection().transform;
+
+        if (ShouldRetreat())
+        {
+            rb.linearVelocity = new Vector2(enemy.retreatVelocity.x * -DirectionToPlayer(), enemy.retreatVelocity.y);
+            enemy.HandleFlip(DirectionToPlayer());
+        }
     }
 
     public override void Update()
     {
         base.Update();
 
-        if (WithinAttackRange())
+        if (enemy.PlayerDectection())
+            UpdateBattleTimer();
+
+        if (BattleTimeIsOver())
+            stateMachine.ChangeState(enemy.idleState);
+
+        if (WithinAttackRange() && enemy.PlayerDectection())
             stateMachine.ChangeState(enemy.attackState);
         else
             enemy.SetVelocity(enemy.battleMoveSpeed * DirectionToPlayer(), rb.linearVelocity.y);
     }
 
+    private void UpdateBattleTimer() => lastTimeInBattle = Time.time;
+
+    private bool BattleTimeIsOver() => Time.time > lastTimeInBattle + enemy.battleTimeDuration;
+
     private bool WithinAttackRange() => DistanceToPlayer() < enemy.attackDistance;
+
+    private bool ShouldRetreat() => DistanceToPlayer() < enemy.minRetreatDistance;
 
     private float DistanceToPlayer()
     {

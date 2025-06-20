@@ -12,13 +12,11 @@ public class EnemyState : EntityState
         rb = enemy.rb;
     }
 
-    public override void Update()
+    public override void UpdateAnimationParameters()
     {
-        base.Update();
+        base.UpdateAnimationParameters();
 
-        if (Input.GetKeyDown(KeyCode.F))
-            stateMachine.ChangeState(enemy.attackState);
-
+        anim.SetFloat("battleAnimSpeedMultiplier", enemy.battleAnimSpeedMultiplier);
         anim.SetFloat("moveAnimSpeedMultiplier", enemy.moveAnimSpeedMultiplier);
         anim.SetFloat("xVelocity", rb.linearVelocity.x);
     }

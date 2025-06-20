@@ -12,6 +12,6 @@ public class Entity_AnimationTrigger : MonoBehaviour
     public void CurrentStateTrigger()
     {
         // get asset to player and let current player's state know that we want to exit state
-        entity.CallAnimationTrigger();
+        entity.CurrentStateAnimationTrigger();
     }
 }
