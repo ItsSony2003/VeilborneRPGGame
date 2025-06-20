@@ -10,9 +10,10 @@ public class Entity : MonoBehaviour
     public int facingDirection { get; private set; } = 1;
 
     [Header("Collision Detection")]
+    [SerializeField] protected LayerMask whatIsGround;
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private float wallCheckDistance;
-    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform mainWallCheck;
     [SerializeField] private Transform secondWallCheck;
     public bool groundDetected { get; private set; }
@@ -67,18 +68,25 @@ public class Entity : MonoBehaviour
 
     private void HandleCollisionDetection()
     {
-        groundDetected = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
-        wallDetected = Physics2D.Raycast(mainWallCheck.position, Vector2.right * facingDirection, wallCheckDistance, whatIsGround)
-                    && Physics2D.Raycast(secondWallCheck.position, Vector2.right * facingDirection, wallCheckDistance, whatIsGround);
+        groundDetected = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+
+        if (secondWallCheck != null)
+        {
+            wallDetected = Physics2D.Raycast(mainWallCheck.position, Vector2.right * facingDirection, wallCheckDistance, whatIsGround)
+                        && Physics2D.Raycast(secondWallCheck.position, Vector2.right * facingDirection, wallCheckDistance, whatIsGround);
+        }
+        else
+            wallDetected = Physics2D.Raycast(mainWallCheck.position, Vector2.right * facingDirection, wallCheckDistance, whatIsGround);
     }
 
     // Draw raycast line to detect the ground for Player
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -groundCheckDistance));
+        Gizmos.DrawLine(groundCheck.position, groundCheck.position + new Vector3(0, -groundCheckDistance));
 
         Gizmos.color = Color.red;
         Gizmos.DrawLine(mainWallCheck.position, mainWallCheck.position + new Vector3(wallCheckDistance * facingDirection, 0));
-        Gizmos.DrawLine(secondWallCheck.position, secondWallCheck.position + new Vector3(wallCheckDistance * facingDirection, 0));
+        if (secondWallCheck != null)
+            Gizmos.DrawLine(secondWallCheck.position, secondWallCheck.position + new Vector3(wallCheckDistance * facingDirection, 0));
     }
 }

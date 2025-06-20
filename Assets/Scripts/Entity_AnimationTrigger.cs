@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class Player_AnimationTrigger : MonoBehaviour
+public class Entity_AnimationTrigger : MonoBehaviour
 {
-    private Player player;
+    private Entity entity;
     
     private void Awake()
     {
-        player = GetComponentInParent<Player>();
+        entity = GetComponentInParent<Entity>();
     }
 
     public void CurrentStateTrigger()
     {
         // get asset to player and let current player's state know that we want to exit state
-        player.CallAnimationTrigger();
+        entity.CallAnimationTrigger();
     }
 }
