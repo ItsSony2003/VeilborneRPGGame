@@ -22,36 +22,36 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1811220405625673786, guid: 1911136946fea4e46b510f57ea012c58, type: 3}
-    - time: 0.06666667
+    - time: 0.083333336
       value: {fileID: -167384805077533629, guid: 83481034b79d2ff4f837a2901916d26a, type: 3}
-    - time: 0.13333334
+    - time: 0.16666667
       value: {fileID: -6839749642029752237, guid: 6e1e96829233094459834449ab5c3075, type: 3}
-    - time: 0.2
+    - time: 0.25
       value: {fileID: -2168710760347314904, guid: ecc46a3ad3779a64ca3b3bd9b2f93439, type: 3}
-    - time: 0.26666668
-      value: {fileID: 9076496399275514912, guid: 74ed1e9ba8415a24dac756fad0b9201c, type: 3}
     - time: 0.33333334
+      value: {fileID: 9076496399275514912, guid: 74ed1e9ba8415a24dac756fad0b9201c, type: 3}
+    - time: 0.41666666
       value: {fileID: -2041509993098887662, guid: 3eecbffbbb692a849a50ffac2af0d237, type: 3}
-    - time: 0.4
+    - time: 0.5
       value: {fileID: -8120480911645493133, guid: 09ca81d92e83cb2459d6b872224c083b, type: 3}
-    - time: 0.46666667
+    - time: 0.5833333
       value: {fileID: -2073226070243508440, guid: 63442fd4c0247da4ebd43433ba7970f3, type: 3}
-    - time: 0.53333336
-      value: {fileID: 9210177522556065878, guid: c31f06a4d470094449e31d43c88cb99e, type: 3}
-    - time: 0.6
-      value: {fileID: 2832483331454978573, guid: 54e6a6ad89fa3d245b31aefcb8fd7fa7, type: 3}
     - time: 0.6666667
+      value: {fileID: 9210177522556065878, guid: c31f06a4d470094449e31d43c88cb99e, type: 3}
+    - time: 0.75
+      value: {fileID: 2832483331454978573, guid: 54e6a6ad89fa3d245b31aefcb8fd7fa7, type: 3}
+    - time: 0.8333333
       value: {fileID: -790122606986512324, guid: e6e37dffff497004faffe142dae3fdef, type: 3}
-    - time: 0.73333335
+    - time: 0.9166667
       value: {fileID: 306786776084174790, guid: f01417d7a4bd46449995b873eb256a46, type: 3}
-    - time: 0.8
+    - time: 1
       value: {fileID: 4873508639568534944, guid: 94e41f3846d185f4ebde5cd37476c05c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 15
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -86,7 +86,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8666667
+    m_StopTime: 1.0833334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -106,7 +106,14 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.8
+  - time: 0.6666667
+    functionName: AttackTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1
     functionName: CurrentStateTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
