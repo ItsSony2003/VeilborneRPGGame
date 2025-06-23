@@ -256,6 +256,7 @@ GameObject:
   - component: {fileID: 162664425}
   - component: {fileID: 162664429}
   - component: {fileID: 162664430}
+  - component: {fileID: 162664431}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -306,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 162664424}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.38, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: -2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -412,6 +413,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   isDead: 0
+  knockbackDuration: 0.15
+  onDamageKnockback: {x: 5, y: 2.5}
+  heavyDamageThreshold: 0.2
+  heavyKnockbackDuration: 0.45
+  onHeavyDamageKnockback: {x: 12, y: 5}
+--- !u!114 &162664431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162664424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2a007ec46380a48906baaa9dea4ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamageMaterial: {fileID: 2100000, guid: 4916857037c8345498fc2077c3d15d65, type: 2}
+  onDamageVFXDuration: 0.1
 --- !u!1 &185339095
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +595,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.045947, y: 1.8083901, z: 7.903805}
+  m_LocalPosition: {x: 6.665947, y: -0.49160987, z: 7.903805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -120646,7 +120666,7 @@ Transform:
   m_GameObject: {fileID: 1886489823}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.045947, y: 1.8083901, z: 7.903805}
+  m_LocalPosition: {x: 6.665947, y: -0.49160987, z: 7.903805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -120874,6 +120894,7 @@ GameObject:
   - component: {fileID: 1918610135}
   - component: {fileID: 1918610138}
   - component: {fileID: 1918610139}
+  - component: {fileID: 1918610140}
   m_Layer: 8
   m_Name: Enemy_AssasinCultist
   m_TagString: Untagged
@@ -121029,6 +121050,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   isDead: 0
+  knockbackDuration: 0.15
+  onDamageKnockback: {x: 5, y: 2.5}
+  heavyDamageThreshold: 0.2
+  heavyKnockbackDuration: 0.45
+  onHeavyDamageKnockback: {x: 12, y: 5}
+--- !u!114 &1918610140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918610133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2a007ec46380a48906baaa9dea4ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamageMaterial: {fileID: 2100000, guid: 4916857037c8345498fc2077c3d15d65, type: 2}
+  onDamageVFXDuration: 0.1
 --- !u!1 &1920309679
 GameObject:
   m_ObjectHideFlags: 0
