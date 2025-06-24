@@ -14,14 +14,16 @@ public class Enemy_DeadState : EnemyState
         base.Enter();
 
         rb.simulated = false;
+        stateMachine.TurnOffStateMachine();
 
         //THIS IS FOR ENEMY TO FALL OFF MAP
         //anim.enabled = false;
         //collider2D.enabled = false;
-
         //rb.gravityScale = 12;
         //rb.linearVelocity = new Vector2(rb.linearVelocity.x, 12);
-
         //stateMachine.TurnOffStateMachine();
+
+        // Delete Enemy (can be used later)
+        //Object.Destroy(enemy.gameObject, 5f);
     }
 }

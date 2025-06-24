@@ -15,11 +15,14 @@ public class Entity_Combat : MonoBehaviour
     {
         foreach (var target in GetDetectionColliders())
         {
-            Entity_Health targetHealth = target.GetComponent<Entity_Health>();
+            IDamageable damageable = target.GetComponent<IDamageable>();
+            damageable?.TakeDamage(damage, transform);
 
-            // targetHealth?.TakeDamage(10)
-            if (targetHealth != null)
-                targetHealth.TakeDamage(damage, transform);
+            //Entity_Health targetHealth = target.GetComponent<Entity_Health>();
+
+            //// targetHealth?.TakeDamage(10)
+            //if (targetHealth != null)
+            //    targetHealth.TakeDamage(damage, transform);
         }
     }    
 

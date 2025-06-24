@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy_AssasinCultist : Enemy
+public class Enemy_AssasinCultist : Enemy, ICounterable
 {
     protected override void Awake()
     {
@@ -11,6 +11,7 @@ public class Enemy_AssasinCultist : Enemy
         attackState = new Enemy_AttackState(this, stateMachine, "attack");
         battleState = new Enemy_BattleState(this, stateMachine, "battle");
         deadState = new Enemy_DeadState(this, stateMachine, "dead");
+        stunnedState = new Enemy_StunnedState(this, stateMachine, "stunned");
     }
 
     protected override void Start()
@@ -18,5 +19,21 @@ public class Enemy_AssasinCultist : Enemy
         base.Start();
 
         stateMachine.Initialize(idleState);
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (Input.GetKeyDown(KeyCode.F))
+            HandleCounterAtack();
+    }
+
+    public void HandleCounterAtack()
+    {
+        if (canBeStunned == false)
+            return;
+
+       stateMachine.ChangeState(stunnedState);
     }
 }
