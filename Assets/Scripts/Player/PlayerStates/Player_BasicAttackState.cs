@@ -39,8 +39,6 @@ public class Player_BasicAttackState : PlayerState
         base.Update();
         HandleAttackVelocity();
 
-        // detect and damage enemy
-
         if (input.Player.Attack.WasPressedThisFrame())
             NextAttackQueued();
 

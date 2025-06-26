@@ -9,6 +9,7 @@ public class Player_GroundState : PlayerState
     public override void Update()
     {
         base.Update();
+
         if (rb.linearVelocity.y < 0 && player.groundDetected == false)
             stateMachine.ChangeState(player.fallState);
 
@@ -17,5 +18,8 @@ public class Player_GroundState : PlayerState
 
         if (input.Player.Attack.WasPressedThisFrame())
             stateMachine.ChangeState(player.basicAttackState);
+
+        if (input.Player.CounterAttack.WasPressedThisFrame())
+            stateMachine.ChangeState(player.counterAttackState);
     }
 }
