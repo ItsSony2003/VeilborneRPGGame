@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Entity_Health : MonoBehaviour, IDamageable
 {
+    private Slider healthBar;
     private Entity_VFX entityVfx;
     private Entity entity;
 
+    [SerializeField] protected float currentHp;
     [SerializeField] protected float maxHp = 100;
     [SerializeField] protected bool isDead;
 
@@ -23,6 +26,10 @@ public class Entity_Health : MonoBehaviour, IDamageable
     {
         entity = GetComponent<Entity>();
         entityVfx = GetComponent<Entity_VFX>();
+        healthBar = GetComponentInChildren<Slider>();
+
+        currentHp = maxHp;
+        UpdateHealthBar();
     }
 
     public virtual void TakeDamage(float damage, Transform damageDealer)
@@ -40,9 +47,10 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     protected void ReduceHp(float damage)
     {
-        maxHp -= damage;
+        currentHp -= damage;
+        UpdateHealthBar();
 
-        if (maxHp <= 0)
+        if (currentHp <= 0)
             Die();
     }
 
@@ -52,6 +60,14 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
         // Entity Died
         entity.EntityDeath();
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar == null)
+            return;
+
+        healthBar.value = currentHp / maxHp;
     }
 
     private Vector2 CalculationKnockback(float damage, Transform damageDealer)
