@@ -11,6 +11,7 @@ public class Enemy_IdleState : Enemy_GroundedState
         base.Enter();
 
         stateTimer = enemy.idleTime;
+        enemy.SetVelocity(0, rb.linearVelocity.y);
     }
 
     public override void Update()
