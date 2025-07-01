@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,10 +32,16 @@ public class Entity_Health : MonoBehaviour, IDamageable
         UpdateHealthBar();
     }
 
-    public virtual void TakeDamage(float damage, Transform damageDealer)
+    public virtual bool TakeDamage(float damage, Transform damageDealer)
     {
         if (isDead) 
-            return;
+            return false;
+
+        if (AttackEvaded())
+        {
+            Debug.Log($"{gameObject.name} evaded the attack!");
+            return false;
+        }
 
         float duration = CalculateDuration(damage);
         Vector2 knockback = CalculationKnockback(damage, damageDealer);
@@ -44,7 +49,11 @@ public class Entity_Health : MonoBehaviour, IDamageable
         entityVfx?.PlayOnDamageVfx();
         entity?.ReceiveKnockback(knockback, duration);
         ReduceHp(damage);
+
+        return true;
     }
+
+    private bool AttackEvaded() => Random.Range(0, 100) <= stats.GetEvasion();
 
     protected void ReduceHp(float damage)
     {

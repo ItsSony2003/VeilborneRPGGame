@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: e905eb4e02118384f827c901ef437561
+guid: 65a5c11d90daef24aa5604cdc4f2d609
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2522785386390767121
-    second: AirAttack3_0
+      213: -4241196560224491508
+    second: FX024_4_0
   - first:
-      213: -5692804233869386933
-    second: AirAttack3_1
+      213: 5820365066633417671
+    second: FX024_4_1
   - first:
-      213: 2048159200698541551
-    second: AirAttack3_2
+      213: -7810798173596418720
+    second: FX024_4_2
   - first:
-      213: -5349111737786983541
-    second: AirAttack3_3
+      213: 1040545669961167665
+    second: FX024_4_3
   - first:
-      213: -3698160610074152765
-    second: AirAttack3_4
+      213: 8265471706913862897
+    second: FX024_4_4
   - first:
-      213: 5510435772714457607
-    second: AirAttack3_5
+      213: 2916068979224576695
+    second: FX024_4_5
   - first:
-      213: -3118345223221609006
-    second: AirAttack3_6
+      213: 6471821917148278887
+    second: FX024_4_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,12 +64,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -144,133 +144,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AirAttack3_0
+      name: FX024_4_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 170
-        height: 170
+        x: 45
+        y: 42
+        width: 14
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bf936893f2a9a574c9ffe35f16f5f88b
-      internalID: 2049089469
+      spriteID: c08e535033e3425c0800000000000000
+      internalID: -4241196560224491508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AirAttack3_1
+      name: FX024_4_1
       rect:
         serializedVersion: 2
-        x: 170
-        y: 0
-        width: 170
-        height: 170
+        x: 50
+        y: 35
+        width: 23
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6b7e85473962edb4395d6a1e0dd80943
-      internalID: -161931838
+      spriteID: 7c317c3c03716c050800000000000000
+      internalID: 5820365066633417671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AirAttack3_2
+      name: FX024_4_2
       rect:
         serializedVersion: 2
-        x: 340
-        y: 0
-        width: 170
-        height: 170
+        x: 74
+        y: 48
+        width: 11
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e77dd72cf88f15a4082a0224ae0321fc
-      internalID: -616473669
+      spriteID: 06df38ac1787a9390800000000000000
+      internalID: -7810798173596418720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AirAttack3_3
+      name: FX024_4_3
       rect:
         serializedVersion: 2
-        x: 510
-        y: 0
-        width: 170
-        height: 170
-      alignment: 9
-      pivot: {x: 0.5, y: 0.515}
+        x: 22
+        y: 32
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e38acef7da7fade4fb7f041d74d9872c
-      internalID: -1807753673
+      spriteID: 1333b9616c2c07e00800000000000000
+      internalID: 1040545669961167665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AirAttack3_4
+      name: FX024_4_4
       rect:
         serializedVersion: 2
-        x: 680
-        y: 0
-        width: 170
-        height: 170
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53}
+        x: 27
+        y: 24
+        width: 28
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 99c47580e39a86744accbc393519656d
-      internalID: -266681716
+      spriteID: 1f474af99bad4b270800000000000000
+      internalID: 8265471706913862897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AirAttack3_5
+      name: FX024_4_5
       rect:
         serializedVersion: 2
-        x: 850
-        y: 0
-        width: 170
-        height: 170
-      alignment: 9
-      pivot: {x: 0.5, y: 0.55}
+        x: 44
+        y: 18
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7a5a753da25045c4cb11f643b38c8bfb
-      internalID: 617924758
+      spriteID: 7b2873f5945f77820800000000000000
+      internalID: 2916068979224576695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FX024_4_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 12
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 760f5359eb780d950800000000000000
+      internalID: 6471821917148278887
       vertices: []
       indices: 
       edges: []
@@ -279,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1339cc26001009747b98b44ec629c9bd
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -289,12 +311,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AirAttack3_0: 2049089469
-      AirAttack3_1: -161931838
-      AirAttack3_2: -616473669
-      AirAttack3_3: -1807753673
-      AirAttack3_4: -266681716
-      AirAttack3_5: 617924758
+      FX024_4_0: -4241196560224491508
+      FX024_4_1: 5820365066633417671
+      FX024_4_2: -7810798173596418720
+      FX024_4_3: 1040545669961167665
+      FX024_4_4: 8265471706913862897
+      FX024_4_5: 2916068979224576695
+      FX024_4_6: 6471821917148278887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
