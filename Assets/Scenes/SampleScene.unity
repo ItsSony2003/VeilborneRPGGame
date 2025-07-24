@@ -387,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 162664424}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -2.2, z: -1}
+  m_LocalPosition: {x: 14.48, y: -2.2, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp:
-    baseValue: 100
+    baseValue: 10000
   major:
     strength:
       baseValue: 0
@@ -542,18 +542,16 @@ MonoBehaviour:
     damage:
       baseValue: 10
     critPower:
-      baseValue: 20
+      baseValue: 0
     critChance:
-      baseValue: 10
+      baseValue: 0
+    armorReduction:
+      baseValue: 0
     fireDamage:
       baseValue: 0
     iceDamage:
       baseValue: 0
     lightningDamage:
-      baseValue: 0
-    darknessDamage:
-      baseValue: 0
-    poisonDamage:
       baseValue: 0
   defense:
     armor:
@@ -561,14 +559,10 @@ MonoBehaviour:
     evasion:
       baseValue: 0
     fireRes:
-      baseValue: 0
+      baseValue: 35
     iceRes:
       baseValue: 0
     lightningRes:
-      baseValue: 0
-    darknessRes:
-      baseValue: 0
-    poisonRes:
       baseValue: 0
 --- !u!1 &164685196
 GameObject:
@@ -1793,7 +1787,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.665947, y: -0.39160997, z: 6.903805}
+  m_LocalPosition: {x: 17.145947, y: -0.39160997, z: 6.903805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2133,7 +2127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &759275186
 Transform:
   m_ObjectHideFlags: 0
@@ -112718,15 +112712,13 @@ MonoBehaviour:
       baseValue: 0
     critChance:
       baseValue: 0
+    armorReduction:
+      baseValue: 0
     fireDamage:
       baseValue: 0
     iceDamage:
       baseValue: 0
     lightningDamage:
-      baseValue: 0
-    darknessDamage:
-      baseValue: 0
-    poisonDamage:
       baseValue: 0
   defense:
     armor:
@@ -112738,10 +112730,6 @@ MonoBehaviour:
     iceRes:
       baseValue: 0
     lightningRes:
-      baseValue: 0
-    darknessRes:
-      baseValue: 0
-    poisonRes:
       baseValue: 0
 --- !u!114 &1840164124
 MonoBehaviour:
@@ -113020,7 +113008,7 @@ Transform:
   m_GameObject: {fileID: 1886489823}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.665947, y: -0.39160997, z: 6.903805}
+  m_LocalPosition: {x: 17.145947, y: -0.39160997, z: 6.903805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -113266,7 +113254,7 @@ Transform:
   m_GameObject: {fileID: 1918610133}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 11.38, y: -2.21, z: 0}
+  m_LocalPosition: {x: -0.92, y: -2.21, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -113331,7 +113319,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 3.2
-  m_Material: {fileID: 6200000, guid: cab11dff022494a4ba0c4c1ec7e89219, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -113462,16 +113450,14 @@ MonoBehaviour:
       baseValue: 0
     critChance:
       baseValue: 0
+    armorReduction:
+      baseValue: 0
     fireDamage:
-      baseValue: 0
+      baseValue: 100
     iceDamage:
-      baseValue: 0
+      baseValue: 25
     lightningDamage:
-      baseValue: 0
-    darknessDamage:
-      baseValue: 0
-    poisonDamage:
-      baseValue: 0
+      baseValue: 6
   defense:
     armor:
       baseValue: 0
@@ -113482,10 +113468,6 @@ MonoBehaviour:
     iceRes:
       baseValue: 0
     lightningRes:
-      baseValue: 0
-    darknessRes:
-      baseValue: 0
-    poisonRes:
       baseValue: 0
 --- !u!1 &1919824167
 GameObject:
@@ -113714,15 +113696,13 @@ MonoBehaviour:
       baseValue: 0
     critChance:
       baseValue: 0
+    armorReduction:
+      baseValue: 0
     fireDamage:
       baseValue: 0
     iceDamage:
       baseValue: 0
     lightningDamage:
-      baseValue: 0
-    darknessDamage:
-      baseValue: 0
-    poisonDamage:
       baseValue: 0
   defense:
     armor:
@@ -113734,10 +113714,6 @@ MonoBehaviour:
     iceRes:
       baseValue: 0
     lightningRes:
-      baseValue: 0
-    darknessRes:
-      baseValue: 0
-    poisonRes:
       baseValue: 0
 --- !u!114 &1921852478
 MonoBehaviour:
