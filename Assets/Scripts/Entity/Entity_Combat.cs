@@ -55,6 +55,12 @@ public class Entity_Combat : MonoBehaviour
 
         if (element == ElementType.Ice && statusHandler.CanBeApplied(ElementType.Ice))
             statusHandler.ApplyChilledEffect(defaultDuration, chillSlowMultiplier);
+
+        if (element == ElementType.Fire && statusHandler.CanBeApplied(ElementType.Fire))
+        {
+            float fireDamage = stats.offense.fireDamage.GetValue();
+            statusHandler.ApplyBurnEffect(defaultDuration, fireDamage);
+        }
     }
 
     protected Collider2D[] GetDetectionColliders()

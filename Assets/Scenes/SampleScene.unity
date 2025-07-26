@@ -500,6 +500,7 @@ MonoBehaviour:
   hitVfx: {fileID: 858197997249343636, guid: f2794f9075ba4aa479d5e66ef6954189, type: 3}
   critHitVfx: {fileID: 8215075865357968818, guid: 743d4c22da6c6aa44b26417f40a866ba, type: 3}
   chillVfx: {r: 0, g: 0.64705884, b: 1, a: 1}
+  fireVfx: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
 --- !u!114 &162664432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,7 +546,7 @@ MonoBehaviour:
       baseValue: 0
   offense:
     damage:
-      baseValue: 10
+      baseValue: 0
     critPower:
       baseValue: 0
     critChance:
@@ -553,9 +554,9 @@ MonoBehaviour:
     armorReduction:
       baseValue: 0
     fireDamage:
-      baseValue: 0
-    iceDamage:
       baseValue: 10
+    iceDamage:
+      baseValue: 0
     lightningDamage:
       baseValue: 0
   defense:
@@ -564,7 +565,7 @@ MonoBehaviour:
     evasion:
       baseValue: 0
     fireRes:
-      baseValue: 0
+      baseValue: 10
     iceRes:
       baseValue: 0
     lightningRes:
@@ -1549,6 +1550,7 @@ MonoBehaviour:
   hitVfx: {fileID: 0}
   critHitVfx: {fileID: 0}
   chillVfx: {r: 0, g: 1, b: 1, a: 1}
+  fireVfx: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &798807730
 GameObject:
   m_ObjectHideFlags: 0
@@ -111326,6 +111328,7 @@ MonoBehaviour:
   hitVfx: {fileID: 858197997249343636, guid: f2794f9075ba4aa479d5e66ef6954189, type: 3}
   critHitVfx: {fileID: 8215075865357968818, guid: 743d4c22da6c6aa44b26417f40a866ba, type: 3}
   chillVfx: {r: 0, g: 0.64705884, b: 1, a: 1}
+  fireVfx: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   attackAlert: {fileID: 0}
 --- !u!114 &1918610141
 MonoBehaviour:
@@ -111340,7 +111343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp:
-    baseValue: 100
+    baseValue: 10000
   major:
     strength:
       baseValue: 0
@@ -111360,9 +111363,9 @@ MonoBehaviour:
     armorReduction:
       baseValue: 0
     fireDamage:
-      baseValue: 0
-    iceDamage:
       baseValue: 10
+    iceDamage:
+      baseValue: 0
     lightningDamage:
       baseValue: 0
   defense:
