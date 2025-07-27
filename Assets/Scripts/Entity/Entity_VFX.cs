@@ -19,6 +19,7 @@ public class Entity_VFX : MonoBehaviour
 
     [SerializeField] private Color chillVfx = Color.cyan;
     [SerializeField] private Color fireVfx = Color.red;
+    [SerializeField] private Color lightningVfx = Color.yellow;
     private Color originalHitVfxColor;
 
     private void Awake()
@@ -36,6 +37,9 @@ public class Entity_VFX : MonoBehaviour
 
         if (element == ElementType.Fire)
             StartCoroutine(PlayStatusVfxCo(duration, fireVfx));
+
+        if (element == ElementType.Lightning)
+            StartCoroutine(PlayStatusVfxCo(duration, lightningVfx));
     }
 
     private IEnumerator PlayStatusVfxCo(float duration, Color effectColor)
@@ -70,6 +74,13 @@ public class Entity_VFX : MonoBehaviour
             vfx.transform.Rotate(0, 180, 0);
     }
 
+    public void StopAllVfx()
+    {
+        StopAllCoroutines();
+        spriteRenderer.color = Color.white;
+        spriteRenderer.material = originalMaterial;
+    }
+
     public void UpdateOnHitColor(ElementType element)
     {
         if (element == ElementType.Ice)
@@ -77,6 +88,9 @@ public class Entity_VFX : MonoBehaviour
 
         if (element == ElementType.Fire)
             hitVfxColor = fireVfx;
+
+        if (element == ElementType.Lightning)
+            hitVfxColor = lightningVfx;
 
         if (element == ElementType.None)
             hitVfxColor = originalHitVfxColor;
