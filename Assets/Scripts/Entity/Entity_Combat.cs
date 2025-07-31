@@ -37,7 +37,7 @@ public class Entity_Combat : MonoBehaviour
 
             float elementalDamage = stats.GetElementalDamage(out ElementType element);
             float damage = stats.GetPhysicalDamage(out bool isCrit);
-            
+
             bool targetGotHit = damageable.TakeDamage(damage, elementalDamage, element, transform);
 
             if (element != ElementType.None)
