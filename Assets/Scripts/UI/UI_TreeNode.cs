@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
+    private UI ui;
+    private RectTransform rect;
+
     [SerializeField] private Skill_DataSO skillData;
     [SerializeField] private string skillName;
 
@@ -13,18 +16,11 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public bool isUnlocked;
     public bool isLocked;
 
-    private void OnValidate()
-    {
-        if (skillData == null)
-            return;
-
-        skillName = skillData.skillName;
-        skillIcon.sprite = skillData.skillIcon;
-        gameObject.name = "UI_TreeNode: " + skillData.skillName;
-    }
-
     private void Awake()
     {
+        ui = GetComponentInParent<UI>();
+        rect = GetComponent<RectTransform>();
+
         UpdateIconColor(ConvertColorFromHex(lockedColorHex));
     }
 
@@ -65,6 +61,8 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        ui.skillTip.ShowTip(true, rect, skillData);
+
         if (isUnlocked == false)
             UpdateIconColor(Color.white * 0.8f);
             //Debug.Log("Show Skills TollTip");
@@ -72,6 +70,8 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        ui.skillTip.ShowTip(false, rect);
+
         if (isUnlocked == false)
             UpdateIconColor(lastColor);
             //Debug.Log("Hide Skills TollTip");
@@ -81,5 +81,15 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         ColorUtility.TryParseHtmlString(hex, out Color color);
         return color;
+    }
+
+    private void OnValidate()
+    {
+        if (skillData == null)
+            return;
+
+        skillName = skillData.skillName;
+        skillIcon.sprite = skillData.skillIcon;
+        gameObject.name = "UI_TreeNode: " + skillData.skillName;
     }
 }
