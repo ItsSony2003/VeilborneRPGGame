@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
-  m_Name: Skill Data - Echo of the Lost
+  m_Name: Skill Data - Ghost Remnant
   m_EditorClassIdentifier: 
-  skillCost: 1
-  skillName: Echo of The Lost
-  skillDescription: "Summon a phantom of your former self \u2014 a ghost from another
-    timeline that distracts enemies."
-  skillIcon: {fileID: -359357723, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillCost: 2
+  skillName: Ghost Remnant
+  skillDescription: When the ghost fades, it leaves behind a soul remnant that slowly
+    follows and heals you.
+  skillIcon: {fileID: -1389487997, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}

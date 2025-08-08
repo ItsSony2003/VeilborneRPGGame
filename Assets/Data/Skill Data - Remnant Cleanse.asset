@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
-  m_Name: Skill Data - Mournwisp
+  m_Name: Skill Data - Remnant Cleanse
   m_EditorClassIdentifier: 
-  skillCost: 2
-  skillName: Mournwisp
-  skillDescription: When the echo is destroyed, it releases a healing wisp that follows
-    and restores your health.
-  skillIcon: {fileID: -1389487997, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillCost: 3
+  skillName: Remnant Cleanse
+  skillDescription: The soul remnant now removes curses and negative effects on contact.
+  skillIcon: {fileID: 250909902, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}

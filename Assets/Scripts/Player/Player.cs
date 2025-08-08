@@ -7,6 +7,8 @@ public class Player : Entity
 {
     public static event Action OnPlayerDeath;
 
+    private UI ui;
+
     public PlayerInputSet input { get; private set; }
 
     public Player_IdleState idleState { get; private set; }
@@ -48,6 +50,7 @@ public class Player : Entity
     {
         base.Awake();
 
+        ui = FindAnyObjectByType<UI>();
         input = new PlayerInputSet();
 
         idleState = new Player_IdleState(this, stateMachine, "idle");
@@ -121,6 +124,8 @@ public class Player : Entity
         // input.Player.Movement.started // Input just begun
         input.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); // Input in performed, ctx means context
         input.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Input stops, when you release the key
+
+        input.Player.ToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTreeUI();
     }
 
     private void OnDisable()
