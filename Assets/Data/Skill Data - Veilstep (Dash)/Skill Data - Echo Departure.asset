@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
+  m_Name: Skill Data - Echo Departure
+  m_EditorClassIdentifier: 
+  skillCost: 2
+  skillType: 0
+  upgradeType: 1
+  skillName: Echo Departure
+  skillDescription: 'Leave behind a phantom echo at the point where you vanished.
+
+    (Inherits
+    all upgrades from the Echo of the Lost skill tree)'
+  skillIcon: {fileID: 12002179, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}

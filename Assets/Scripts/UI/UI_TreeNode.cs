@@ -58,6 +58,7 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         // find Player_ManagerSkills
         // Unlock skil on skill manager
         // skill manager unlock skill from skill data and skill type
+        skillTree.skillManager.GetSkillByType(skillData.skillType).SetSkillUpgrade(skillData.upgradeType);
     }
 
     private bool CanBeUnlocked()
@@ -112,8 +113,10 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         ui.skillToolTip.ShowTip(true, rect, this);
 
-        if (isUnlocked == false || isLocked == false)
-            ToggleNodeHighlight(true);
+        if (isUnlocked || isLocked)
+            return;
+
+        ToggleNodeHighlight(true);
     }
 
     // Hide Skills TollTip
@@ -121,8 +124,10 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         ui.skillToolTip.ShowToolTip(false, rect);
 
-        if (isUnlocked == false || isLocked == false)
-            ToggleNodeHighlight(false);
+        if (isUnlocked || isLocked)
+            return;
+
+        ToggleNodeHighlight(false);
     }
 
     private void ToggleNodeHighlight(bool highlight)
