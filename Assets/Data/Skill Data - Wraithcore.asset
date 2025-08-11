@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
+  m_Name: Skill Data - Wraithcore
+  m_EditorClassIdentifier: 
+  skillCost: 1
+  unlockDefault: 1
+  skillType: 2
+  upgradeData:
+    upgradeType: 6
+    cooldown: 1
+  skillName: Wraithcore
+  skillDescription: Forge a shard of crystallized soul essence, pulsing with spectral
+    light. It shatters in a burst of energy when struck by an enemy or when its time
+    runs out.
+  skillIcon: {fileID: 1573931027, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}

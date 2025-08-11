@@ -3,6 +3,7 @@ using UnityEngine;
 public enum SkillType
 {
     Dash,
-    Echo
+    Echo,
+    WraithcoreShard
 }
     

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Skill Data - Veilstep
   m_EditorClassIdentifier: 
   skillCost: 1
+  unlockDefault: 1
   skillType: 0
-  upgradeType: 0
+  upgradeData:
+    upgradeType: 0
+    cooldown: 3
   skillName: Veilstep
   skillDescription: 'Step through the mist to evade danger.
 

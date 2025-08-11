@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Entity_VFX : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer sr;
     private Entity entity;
     
     [Header("On Taking Damage VFX")]
@@ -25,8 +25,8 @@ public class Entity_VFX : MonoBehaviour
     private void Awake()
     {
         entity = GetComponent<Entity>();
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        originalMaterial = spriteRenderer.material;
+        sr = GetComponentInChildren<SpriteRenderer>();
+        originalMaterial = sr.material;
         originalHitVfxColor = hitVfxColor;
     }
 
@@ -54,14 +54,14 @@ public class Entity_VFX : MonoBehaviour
 
         while (timerHasPassed < duration)
         {
-            spriteRenderer.color = toggle ? lightColor : darkColor;
+            sr.color = toggle ? lightColor : darkColor;
             toggle = !toggle;
 
             yield return new WaitForSeconds(tickInterval);
             timerHasPassed += tickInterval;
         }
 
-        spriteRenderer.color = Color.white;
+        sr.color = Color.white;
     }
 
     public void CreateOnHitVFX(Transform target, bool isCrit)
@@ -77,8 +77,8 @@ public class Entity_VFX : MonoBehaviour
     public void StopAllVfx()
     {
         StopAllCoroutines();
-        spriteRenderer.color = Color.white;
-        spriteRenderer.material = originalMaterial;
+        sr.color = Color.white;
+        sr.material = originalMaterial;
     }
 
     public void UpdateOnHitColor(ElementType element)
@@ -106,9 +106,9 @@ public class Entity_VFX : MonoBehaviour
 
     private IEnumerator OnDamageVfxCo()
     {
-        spriteRenderer.material = onDamageMaterial;
+        sr.material = onDamageMaterial;
 
         yield return new WaitForSeconds(onDamageVFXDuration);
-        spriteRenderer.material = originalMaterial;
+        sr.material = originalMaterial;
     }
 }

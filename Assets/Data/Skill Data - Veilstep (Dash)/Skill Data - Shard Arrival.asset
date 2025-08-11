@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCost: 3
   skillType: 0
-  upgradeType: 4
+  upgradeData:
+    upgradeType: 4
+    cooldown: 3
   skillName: Shard Arrival
   skillDescription: 'Upon reappearing, form a fragment of crystallized soul energy
     that detonates after a short delay.

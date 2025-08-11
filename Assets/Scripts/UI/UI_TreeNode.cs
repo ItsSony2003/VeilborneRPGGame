@@ -34,6 +34,12 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         UpdateIconColor(ConvertColorFromHex(lockedColorHex));
     }
 
+    private void Start()
+    {
+        if (skillData.unlockDefault)
+            Unlock();
+    }
+
     public void Refund()
     {
         isLocked = false;
@@ -58,7 +64,7 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         // find Player_ManagerSkills
         // Unlock skil on skill manager
         // skill manager unlock skill from skill data and skill type
-        skillTree.skillManager.GetSkillByType(skillData.skillType).SetSkillUpgrade(skillData.upgradeType);
+        skillTree.skillManager.GetSkillByType(skillData.skillType).SetSkillUpgrade(skillData.upgradeData);
     }
 
     private bool CanBeUnlocked()
@@ -87,7 +93,18 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private void LockConflictedNodes()
     {
         foreach (var node in conflictedNodes)
+        {
             node.isLocked = true;
+            node.LockChildNodes();
+        }
+    }
+
+    public void LockChildNodes()
+    {
+        isLocked = true;
+
+        foreach (var node in treeConnectionHandler.GetAllChildNodes())
+            node.LockChildNodes();
     }
 
     private void UpdateIconColor(Color color)
