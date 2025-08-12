@@ -81,6 +81,8 @@ public class Player : Entity
         stateMachine.Initialize(idleState);
     }
 
+    public void TeleportPlayer(Vector3 position) => transform.position = position;
+
     protected override IEnumerator SlowDownEntityCo(float duration, float slowMultiplier)
     {
         float originalRunSpeed = runSpeed;
@@ -133,7 +135,7 @@ public class Player : Entity
         input.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Input stops, when you release the key
 
         input.Player.ToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTreeUI();
-        input.Player.Spell.performed += ctx => skillManager.shard.CreateShard();
+        input.Player.Spell.performed += ctx => skillManager.shard.TryToUseSkill();
     }
 
     private void OnDisable()

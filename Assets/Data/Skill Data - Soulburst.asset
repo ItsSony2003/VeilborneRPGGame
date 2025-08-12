@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
-  m_Name: Skill Data - Veilstep
+  m_Name: Skill Data - Soulburst
   m_EditorClassIdentifier: 
-  skillCost: 1
-  unlockDefault: 1
-  skillType: 0
+  skillCost: 3
+  unlockDefault: 0
+  skillType: 2
   upgradeData:
-    upgradeType: 1
-    cooldown: 3
-  skillName: Veilstep
-  skillDescription: 'Step through the mist to evade danger.
-
-    You cannot take
-    damage while dashing.'
-  skillIcon: {fileID: -1103379742, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+    upgradeType: 8
+    cooldown: 4
+  skillName: Soulburst
+  skillDescription: You may command up to three shards, filling the battlefield with
+    spectral traps.
+  skillIcon: {fileID: -1641744061, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}

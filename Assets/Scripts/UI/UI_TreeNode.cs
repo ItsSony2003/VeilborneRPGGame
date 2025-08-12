@@ -42,8 +42,8 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void Refund()
     {
-        isLocked = false;
         isUnlocked = false;
+        isLocked = false;
         UpdateIconColor(ConvertColorFromHex(lockedColorHex));
 
         skillTree.AddSkillPoints(skillData.skillCost);
