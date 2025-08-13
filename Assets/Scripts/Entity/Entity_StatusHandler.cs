@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Xml.Serialization;
 using UnityEngine;
 
 public class Entity_StatusHandler : MonoBehaviour
@@ -22,6 +21,18 @@ public class Entity_StatusHandler : MonoBehaviour
         entityVfx = GetComponent<Entity_VFX>();
         entityStats = GetComponent<Entity_Stats>();
         entityHealth = GetComponent<Entity_Health>();
+    }
+
+    public void ApplyStatusEffect(ElementType element, ElementalEffectData effectData)
+    {
+        if (element == ElementType.Ice && CanBeApplied(ElementType.Ice))
+            ApplySlowEffect(effectData.slowDuration, effectData.slowMultiplier);
+
+        if (element == ElementType.Fire && CanBeApplied(ElementType.Fire))
+            ApplyBurnEffect(effectData.burnDuration, effectData.burnDamage);
+
+        if (element == ElementType.Lightning && CanBeApplied(ElementType.Lightning))
+            ApplyLightningEffect(effectData.lightningDuration, effectData.lightningDamage, effectData.lightningCharge);
     }
 
     public void ApplyLightningEffect(float duration, float lightningDamage, float charge)
@@ -97,16 +108,16 @@ public class Entity_StatusHandler : MonoBehaviour
         currentEffect = ElementType.None;
     }
 
-    public void ApplyChillEffect(float duration, float slowMultiplier)
+    public void ApplySlowEffect(float duration, float slowMultiplier)
     {
         float iceResistance = entityStats.GetElementalResistance(ElementType.Ice);
         float finalDuration = duration * (1 - iceResistance);
 
-        StartCoroutine(ChillEffectCo(finalDuration, slowMultiplier));
+        StartCoroutine(SlowEffectCo(finalDuration, slowMultiplier));
         // Debug.Log("Chill effect applied!");
     }
 
-    private IEnumerator ChillEffectCo(float duration, float slowMultiplier)
+    private IEnumerator SlowEffectCo(float duration, float slowMultiplier)
     {
         entity.SlowDownEntity(duration, slowMultiplier);
         currentEffect = ElementType.Ice;

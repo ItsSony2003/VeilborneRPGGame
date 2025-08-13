@@ -18,6 +18,16 @@ MonoBehaviour:
   upgradeData:
     upgradeType: 7
     cooldown: 4
+    damageScale:
+      physical: 0
+      elemental: 2
+      slowDuration: 3
+      slowMultiplier: 0.25
+      burnDuration: 3
+      burnDamageScale: 1.2
+      lightningDuration: 3
+      lightningDamageScale: 1.2
+      lightningCharge: 0.4
   skillName: Hunthaze
   skillDescription: The shard drifts like a cursed lantern toward the nearest foe,
     drawn by the pull of their lifeforce.

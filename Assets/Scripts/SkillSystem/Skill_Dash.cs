@@ -22,9 +22,7 @@ public class Skill_Dash : Skill_Base
 
     private void CreateShard()
     {
-        Debug.Log("Create Time Shard");
-
-        // sklill nmanager shard create
+        skillManager.shard.CreateDashShard();
     }
 
     private void CreateClone()

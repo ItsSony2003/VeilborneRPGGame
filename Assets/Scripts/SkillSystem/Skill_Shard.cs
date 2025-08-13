@@ -138,10 +138,18 @@ public class Skill_Shard : Skill_Base
 
         GameObject shard = Instantiate(shardPrefab, transform.position, Quaternion.identity);
         currentShard = shard.GetComponent<SkillObject_Shard>();
-        currentShard.SetUpShardTime(ignitionTime);
+        currentShard.SetUpShard(this);
 
         if (Unlocked(SkillUpgradeType.Shard_Teleport) || Unlocked(SkillUpgradeType.Shard_TeleportAndHealthRewind))
             currentShard.OnExplode += ForceCoolDown;
+    }
+
+    public void CreateDashShard()
+    {
+        bool canMove = Unlocked(SkillUpgradeType.Shard_DetectEnemy) || Unlocked(SkillUpgradeType.Shard_MultiShard);
+
+        GameObject shard = Instantiate(shardPrefab, transform.position, Quaternion.identity);
+        shard.GetComponent<SkillObject_Shard>().SetUpShard(this, ignitionTime, canMove, shardSpeed);
     }
 
     public float GetIgnitionTime()

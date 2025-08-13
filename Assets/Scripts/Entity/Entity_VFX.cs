@@ -17,7 +17,7 @@ public class Entity_VFX : MonoBehaviour
     [SerializeField] private GameObject hitVfx;
     [SerializeField] private GameObject critHitVfx;
 
-    [SerializeField] private Color chillVfx = Color.cyan;
+    [SerializeField] private Color slowVfx = Color.cyan;
     [SerializeField] private Color fireVfx = Color.red;
     [SerializeField] private Color lightningVfx = Color.yellow;
     private Color originalHitVfxColor;
@@ -33,7 +33,7 @@ public class Entity_VFX : MonoBehaviour
     public void PlayOnStatusVfx(float duration, ElementType element)
     {
         if (element == ElementType.Ice)
-            StartCoroutine(PlayStatusVfxCo(duration, chillVfx));
+            StartCoroutine(PlayStatusVfxCo(duration, slowVfx));
 
         if (element == ElementType.Fire)
             StartCoroutine(PlayStatusVfxCo(duration, fireVfx));
@@ -64,11 +64,11 @@ public class Entity_VFX : MonoBehaviour
         sr.color = Color.white;
     }
 
-    public void CreateOnHitVFX(Transform target, bool isCrit)
+    public void CreateOnHitVFX(Transform target, bool isCrit, ElementType element)
     {
         GameObject hitPrefab = isCrit ? critHitVfx : hitVfx;
         GameObject vfx = Instantiate(hitPrefab, target.position, Quaternion.identity);
-        vfx.GetComponentInChildren<SpriteRenderer>().color = hitVfxColor;
+        //vfx.GetComponentInChildren<SpriteRenderer>().color = GetElementalColor(element);
 
         if (entity.facingDirection == -1 && isCrit)
             vfx.transform.Rotate(0, 180, 0);
@@ -81,19 +81,19 @@ public class Entity_VFX : MonoBehaviour
         sr.material = originalMaterial;
     }
 
-    public void UpdateOnHitColor(ElementType element)
+    public Color GetElementalColor(ElementType element)
     {
-        if (element == ElementType.Ice)
-            hitVfxColor = chillVfx;
-
-        if (element == ElementType.Fire)
-            hitVfxColor = fireVfx;
-
-        if (element == ElementType.Lightning)
-            hitVfxColor = lightningVfx;
-
-        if (element == ElementType.None)
-            hitVfxColor = originalHitVfxColor;
+        switch (element)
+        {
+            case ElementType.Ice:
+                return slowVfx;
+            case ElementType.Fire:
+                return fireVfx;
+            case ElementType.Lightning:
+                return lightningVfx;
+            default:
+                return Color.white;
+        }
     }
 
     public void PlayOnDamageVfx()

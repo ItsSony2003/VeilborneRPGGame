@@ -13,11 +13,21 @@ MonoBehaviour:
   m_Name: Skill Data - Wraithcore
   m_EditorClassIdentifier: 
   skillCost: 1
-  unlockDefault: 1
+  unlockDefault: 0
   skillType: 2
   upgradeData:
     upgradeType: 6
     cooldown: 1
+    damageScaleData:
+      physical: 1
+      elemental: 1
+      slowDuration: 3
+      slowMultiplier: 0.25
+      burnDuration: 3
+      burnDamageScale: 1
+      lightningDuration: 3
+      lightningDamageScale: 1
+      lightningCharge: 0.4
   skillName: Wraithcore
   skillDescription: Forge a shard of crystallized soul essence, pulsing with spectral
     light. It shatters in a burst of energy when struck by an enemy or when its time

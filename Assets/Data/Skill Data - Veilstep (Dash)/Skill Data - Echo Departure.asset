@@ -13,10 +13,21 @@ MonoBehaviour:
   m_Name: Skill Data - Echo Departure
   m_EditorClassIdentifier: 
   skillCost: 2
+  unlockDefault: 0
   skillType: 0
   upgradeData:
-    upgradeType: 1
+    upgradeType: 2
     cooldown: 3
+    damageScaleData:
+      physical: 1
+      elemental: 1
+      slowDuration: 3
+      slowMultiplier: 0.25
+      burnDuration: 3
+      burnDamageScale: 1
+      lightningDuration: 3
+      lightningDamageScale: 1
+      lightningCharge: 0.4
   skillName: Echo Departure
   skillDescription: 'Leave behind a phantom echo at the point where you vanished.
 
