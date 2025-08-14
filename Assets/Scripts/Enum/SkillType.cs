@@ -4,6 +4,7 @@ public enum SkillType
 {
     Dash,
     Echo,
-    WraithcoreShard
+    WraithcoreShard,
+    RiftfangSwordThrow
 }
     

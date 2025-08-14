@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 10271170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cad9cdb243416e44bf3720d16f2ab4e, type: 3}
+  m_Script: {fileID: 11500000, guid: ca68475543d58574dbd83d1ce3ad06d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &11013384
@@ -1389,11 +1389,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 10271171}
+  - {fileID: 1649335485}
   - {fileID: 1785914119}
   - {fileID: 185339096}
   - {fileID: 702152712}
   - {fileID: 1611606701}
-  - {fileID: 1649335485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &162664427
@@ -7665,7 +7665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1280056183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9561,6 +9561,7 @@ GameObject:
   - component: {fileID: 1649335485}
   - component: {fileID: 1649335486}
   - component: {fileID: 1649335487}
+  - component: {fileID: 1649335488}
   m_Layer: 7
   m_Name: Skills_Manager
   m_TagString: Untagged
@@ -9610,7 +9611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca471fbfcd9524409567843de77bfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillType: 0
+  skillType: 2
   upgradeType: 0
   cooldown: 1
   shardPrefab: {fileID: 5595392246578873566, guid: 6eb1d0d60b023af45bcf43566b9e9714, type: 3}
@@ -9621,6 +9622,26 @@ MonoBehaviour:
   isRegenerating: 0
   shardExistDuration: 12
   savedHealthPercent: 0
+--- !u!114 &1649335488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649335484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3011d6e4efa291c4ab6d7d9f0ec5dfaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillType: 3
+  upgradeType: 11
+  cooldown: 0
+  throwPower: 3
+  swordGravity: 3.2
+  perdictionDot: {fileID: 3640234764058504456, guid: 4c9b48b0ab6459e4baad5661d0387887, type: 3}
+  numberOfDots: 20
+  spaceBetweenDots: 0.03
 --- !u!1 &1653198206
 GameObject:
   m_ObjectHideFlags: 0

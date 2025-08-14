@@ -12,15 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
   m_Name: Skill Data - Veilstep
   m_EditorClassIdentifier: 
-  skillCost: 1
-  unlockDefault: 1
-  skillType: 0
-  upgradeData:
-    upgradeType: 1
-    cooldown: 3
   skillName: Veilstep
   skillDescription: 'Step through the mist to evade danger.
 
     You cannot take
     damage while dashing.'
   skillIcon: {fileID: -1103379742, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillCost: 1
+  unlockDefault: 1
+  skillType: 0
+  upgradeData:
+    upgradeType: 1
+    cooldown: 3
+    damageScaleData:
+      physical: 1
+      elemental: 1
+      slowDuration: 3
+      slowMultiplier: 0.25
+      burnDuration: 3
+      burnDamageScale: 1
+      lightningDuration: 3
+      lightningDamageScale: 1
+      lightningCharge: 0.4

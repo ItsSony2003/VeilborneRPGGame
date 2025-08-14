@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
   m_Name: Skill Data - Wraithcore
   m_EditorClassIdentifier: 
+  skillName: Wraithcore
+  skillDescription: Forge a shard of crystallized soul essence, pulsing with spectral
+    light. It shatters in a burst of energy when struck by an enemy or when its time
+    runs out.
+  skillIcon: {fileID: 1573931027, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
   skillCost: 1
   unlockDefault: 0
   skillType: 2
@@ -28,8 +33,3 @@ MonoBehaviour:
       lightningDuration: 3
       lightningDamageScale: 1
       lightningCharge: 0.4
-  skillName: Wraithcore
-  skillDescription: Forge a shard of crystallized soul essence, pulsing with spectral
-    light. It shatters in a burst of energy when struck by an enemy or when its time
-    runs out.
-  skillIcon: {fileID: 1573931027, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
