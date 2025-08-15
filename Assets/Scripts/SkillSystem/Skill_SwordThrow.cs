@@ -3,14 +3,22 @@ using UnityEngine;
 
 public class Skill_SwordThrow : Skill_Base
 {
+    private SkillObject_Sword currentSword;
+
+    [Header("Default Sword Upgrade")]
+    [SerializeField] private GameObject swordPrefab;
     [Range(0, 10)]
     [SerializeField] private float throwPower = 5;
-    [SerializeField] private float swordGravity = 3.2f;
+
+    [Header("Pierce Sword Upgrade")]
+    [SerializeField] private GameObject swordPiercePrefab;
+    public int pierceAmount = 5;
 
     [Header("Trajectory Aim")]
     [SerializeField] private GameObject perdictionDot;
     [SerializeField] private int numberOfDots = 15;
     [SerializeField] private float spaceBetweenDots = 0.08f;
+    private float swordGravity;
     private Transform[] dots;
     private Vector2 confirmedDirection;
 
@@ -18,13 +26,43 @@ public class Skill_SwordThrow : Skill_Base
     {
         base.Awake();
 
-        dots = GenerateDot();
+        swordGravity = swordPrefab.GetComponent<Rigidbody2D>().gravityScale;
+        dots = GenerateDots();
+    }
+
+    public override bool CanUseSkill()
+    {
+        if (currentSword != null)
+        {
+            currentSword.BackToPlayer();
+            return false;
+        }
+
+        return base.CanUseSkill();
     }
 
     public void SwordThrow()
     {
-        Debug.Log("Sword Throw");
+        GameObject swordPrefab = GetSwordTypePrefab();
+        GameObject newSword = Instantiate(swordPrefab, dots[1].position, Quaternion.identity);
+
+        currentSword = newSword.GetComponent<SkillObject_Sword>();
+        currentSword.SetUpSword(this, GetThrowDirection());
     }
+
+    private GameObject GetSwordTypePrefab()
+    {
+        if (Unlocked(SkillUpgradeType.SwordThrow))
+            return swordPrefab;
+
+        if (Unlocked(SkillUpgradeType.SwordThrow_Pierce))
+            return swordPiercePrefab;
+
+        Debug.Log("Invalid Sword Upgrade Selected!");
+        return null;
+    }
+
+    private Vector2 GetThrowDirection() => confirmedDirection * (throwPower * 10);
 
     public void PredictTrajectory(Vector2 direction)
     {
@@ -60,7 +98,7 @@ public class Skill_SwordThrow : Skill_Base
         }
     }
 
-    private Transform[] GenerateDot()
+    private Transform[] GenerateDots()
     {
         Transform[] newDots = new Transform[numberOfDots];
 
