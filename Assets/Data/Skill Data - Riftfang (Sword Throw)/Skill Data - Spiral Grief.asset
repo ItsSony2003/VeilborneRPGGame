@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
-  m_Name: Skill Data - Riftfang 2
+  m_Name: Skill Data - Spiral Grief
   m_EditorClassIdentifier: 
-  skillName: Riftfang
-  skillDescription: Hurl your spectral blade to damage enemies.
-  skillIcon: {fileID: 1532748941, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
-  skillCost: 1
-  unlockDefault: 1
+  skillName: Spiral Grief
+  skillDescription: The blade spins in place for a few seconds, shredding nearby
+    enemies.
+  skillIcon: {fileID: 1270201973, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillCost: 2
+  unlockDefault: 0
   skillType: 3
   upgradeData:
-    upgradeType: 11
+    upgradeType: 12
     cooldown: 4
     damageScaleData:
-      physical: 1
-      elemental: 1
+      physical: 0.18
+      elemental: 0.18
       slowDuration: 3
       slowMultiplier: 0.25
       burnDuration: 3

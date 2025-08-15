@@ -2378,10 +2378,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 541678536}
-  - {fileID: 1970703248}
-  - {fileID: 796244076}
   - {fileID: 978034059}
   - {fileID: 447312259}
+  - {fileID: 1970703248}
+  - {fileID: 796244076}
   m_Father: {fileID: 1280056183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4229,7 +4229,7 @@ GameObject:
   - component: {fileID: 570716189}
   - component: {fileID: 570716188}
   m_Layer: 5
-  m_Name: 'UI_TreeNode: Soulburst'
+  m_Name: 'UI_TreeNode: Revenant Arc'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4271,14 +4271,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d01660f1889f404686488b00e7c2b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredNodes: []
-  conflictedNodes: []
+  requiredNodes:
+  - {fileID: 2100248052}
+  conflictedNodes:
+  - {fileID: 716464450}
+  - {fileID: 734883244}
   isUnlocked: 0
   isLocked: 0
-  skillData: {fileID: 11400000, guid: 0e79870b6e12a5742a9c48e61b836557, type: 2}
-  skillName: Soulburst
+  skillData: {fileID: 11400000, guid: a5db9aeebef518c408a688dd54d857d3, type: 2}
+  skillName: Revenant Arc
   skillIcon: {fileID: 1580359822}
-  skillCost: 3
+  skillCost: 2
   lockedColorHex: '#646464'
 --- !u!224 &570716190
 RectTransform:
@@ -4595,7 +4598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1020866607, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  m_Sprite: {fileID: 1270201973, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5111,7 +5114,7 @@ GameObject:
   - component: {fileID: 716464450}
   - component: {fileID: 716464451}
   m_Layer: 5
-  m_Name: 'UI_TreeNode: Wraithbind Return'
+  m_Name: 'UI_TreeNode: Spiral Grief'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5129,12 +5132,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d01660f1889f404686488b00e7c2b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredNodes: []
-  conflictedNodes: []
+  requiredNodes:
+  - {fileID: 2100248052}
+  conflictedNodes:
+  - {fileID: 570716189}
+  - {fileID: 734883244}
   isUnlocked: 0
   isLocked: 0
-  skillData: {fileID: 11400000, guid: 308995cfe37ceff468937dc80960f2d7, type: 2}
-  skillName: Wraithbind Return
+  skillData: {fileID: 11400000, guid: f6f08425657819145a603e4e589e0dc7, type: 2}
+  skillName: Spiral Grief
   skillIcon: {fileID: 594696685}
   skillCost: 2
   lockedColorHex: '#646464'
@@ -5423,7 +5429,7 @@ GameObject:
   - component: {fileID: 734883244}
   - component: {fileID: 734883243}
   m_Layer: 5
-  m_Name: 'UI_TreeNode: Hunthaze'
+  m_Name: 'UI_TreeNode: Void Pierce'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5488,12 +5494,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d01660f1889f404686488b00e7c2b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredNodes: []
-  conflictedNodes: []
+  requiredNodes:
+  - {fileID: 2100248052}
+  conflictedNodes:
+  - {fileID: 570716189}
+  - {fileID: 716464450}
   isUnlocked: 0
   isLocked: 0
-  skillData: {fileID: 11400000, guid: 0b7de5b7390078b488c652a7ad254d3e, type: 2}
-  skillName: Hunthaze
+  skillData: {fileID: 11400000, guid: 8fd22d92f74677f4c80343da0e67a298, type: 2}
+  skillName: Void Pierce
   skillIcon: {fileID: 2037536663}
   skillCost: 2
   lockedColorHex: '#646464'
@@ -7006,8 +7015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 85}
-  m_SizeDelta: {x: -50, y: 100}
+  m_AnchoredPosition: {x: 0, y: 95}
+  m_SizeDelta: {x: -50, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011666447
 MonoBehaviour:
@@ -7094,7 +7103,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.50408936, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8373,8 +8382,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: -50, y: 275}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: -50, y: 210}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1170127761
 MonoBehaviour:
@@ -8462,7 +8471,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -1.3261719, z: 0, w: 0.7539673}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9454,7 +9463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1280056183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9495,6 +9504,7 @@ MonoBehaviour:
   - {fileID: 541678538}
   - {fileID: 2072996483}
   - {fileID: 1052077898}
+  - {fileID: 2100248053}
 --- !u!1 &1306046648
 GameObject:
   m_ObjectHideFlags: 0
@@ -10780,7 +10790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1641744061, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  m_Sprite: {fileID: -1721089528, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10846,10 +10856,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2072996482}
+  - {fileID: 887991868}
+  - {fileID: 1886389843}
   - {fileID: 961839614}
   - {fileID: 209441628}
-  - {fileID: 1886389843}
-  - {fileID: 887991868}
   m_Father: {fileID: 1280056183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -11627,12 +11637,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillType: 3
-  upgradeType: 14
+  upgradeType: 0
   cooldown: 0
   swordPrefab: {fileID: 7623567543922100634, guid: 614c05a4aefe2b54c9888a05617808dd, type: 3}
   throwPower: 3
   swordPiercePrefab: {fileID: 7844175283576838739, guid: 245ad608ebe5e604dbad909c921ff9f0, type: 3}
   pierceAmount: 5
+  swordSpinPrefab: {fileID: 714976382354997928, guid: c17501c3f051a9146b87e4f798afa192, type: 3}
+  maxDistance: 8
+  attackPerSecond: 5
+  maxSpinDuration: 2.5
   perdictionDot: {fileID: 3640234764058504456, guid: 4c9b48b0ab6459e4baad5661d0387887, type: 3}
   numberOfDots: 20
   spaceBetweenDots: 0.03
@@ -120612,8 +120626,8 @@ RectTransform:
   - {fileID: 1052077897}
   - {fileID: 1647152707}
   - {fileID: 1971686071}
-  - {fileID: 2093021847}
   - {fileID: 298524945}
+  - {fileID: 2093021847}
   m_Father: {fileID: 1280056183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -122331,7 +122345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 828281248, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  m_Sprite: {fileID: 1467603753, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

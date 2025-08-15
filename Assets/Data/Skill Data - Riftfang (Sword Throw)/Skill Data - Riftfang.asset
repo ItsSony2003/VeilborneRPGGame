@@ -16,7 +16,7 @@ MonoBehaviour:
   skillDescription: Hurl your spectral blade to damage enemies.
   skillIcon: {fileID: 1532748941, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
   skillCost: 1
-  unlockDefault: 1
+  unlockDefault: 0
   skillType: 3
   upgradeData:
     upgradeType: 11

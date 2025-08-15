@@ -14,6 +14,12 @@ public class Skill_SwordThrow : Skill_Base
     [SerializeField] private GameObject swordPiercePrefab;
     public int pierceAmount = 5;
 
+    [Header("Spin Sword Upgrade")]
+    [SerializeField] private GameObject swordSpinPrefab;
+    public int maxDistance = 6;
+    public float attackPerSecond = 3;
+    public float maxSpinDuration = 2.5f;
+
     [Header("Trajectory Aim")]
     [SerializeField] private GameObject perdictionDot;
     [SerializeField] private int numberOfDots = 15;
@@ -57,6 +63,9 @@ public class Skill_SwordThrow : Skill_Base
 
         if (Unlocked(SkillUpgradeType.SwordThrow_Pierce))
             return swordPiercePrefab;
+
+        if (Unlocked(SkillUpgradeType.SwordThrow_Spin))
+            return swordSpinPrefab;
 
         Debug.Log("Invalid Sword Upgrade Selected!");
         return null;

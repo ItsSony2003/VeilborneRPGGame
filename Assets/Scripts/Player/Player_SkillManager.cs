@@ -19,6 +19,7 @@ public class Player_SkillManager : MonoBehaviour
         {
             case SkillType.Dash: return dash;
             case SkillType.WraithcoreShard: return shard;
+            case SkillType.RiftfangSwordThrow: return swordThrow;
 
             default:
                 Debug.Log($"SKill type {type} is not implemented yet!");
