@@ -23,4 +23,15 @@ public enum SkillUpgradeType
     SwordThrow_Spin, // sword will spin at one position like a chainsaw to damage enemy
     SwordThrow_Ricochet, // sword can ricochet and hit other enemies
     SwordThrow_Pierce, // can pierce through enemies in a line
+
+    // ----------- Echo of the Lost (Clone) Tree ------------
+    EchoClone, // create a clone of a player, can take damage from enemy
+    EchoClone_SingleAttack, // clone can perform 1 single attack
+    EchoClone_MultiAttack, // clone can perform N attacks
+    EchoClone_ChanceToClone, // clone has a chance to create a clone
+    
+    EchoClone_HealWisp, // when clone dies, creates a wisp that go towards the player to heal it
+                        // Heal is equal to the percentage of damage taken when died
+    EchoClone_CleanseWisp, // Wisp can remove negative effects (debuff, burn, slow,...) from player
+    EchoClone_CooldownWisp, // Wisp reduce cooldown of all skills by N seconds
 }

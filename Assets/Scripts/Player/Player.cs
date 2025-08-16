@@ -146,7 +146,9 @@ public class Player : Entity
         input.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // Input stops, when you release the key
 
         input.Player.ToggleSkillTreeUI.performed += ctx => ui.ToggleSkillTreeUI();
+
         input.Player.Spell.performed += ctx => skillManager.shard.TryToUseSkill();
+        input.Player.Spell.performed += ctx => skillManager.echoOfTheLost.TryToUseSkill();
     }
 
     private void OnDisable()
