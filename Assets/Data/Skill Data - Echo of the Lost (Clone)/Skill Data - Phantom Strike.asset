@@ -12,7 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
   m_Name: Skill Data - Phantom Strike
   m_EditorClassIdentifier: 
-  skillCost: 2
   skillName: Phantom Strike
   skillDescription: Your ghost double now performs a single attack before vanishing.
   skillIcon: {fileID: 993397031, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillCost: 2
+  unlockDefault: 0
+  skillType: 1
+  upgradeData:
+    upgradeType: 16
+    cooldown: 0
+    damageScaleData:
+      physical: 1
+      elemental: 1
+      slowDuration: 3
+      slowMultiplier: 0.25
+      burnDuration: 3
+      burnDamageScale: 1
+      lightningDuration: 3
+      lightningDamageScale: 1
+      lightningCharge: 0.4
