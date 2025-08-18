@@ -12649,12 +12649,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillType: 1
-  upgradeType: 0
+  upgradeType: 19
   cooldown: 0
   echoOfTheLostPrefab: {fileID: 4935979761667206418, guid: 6a16d506c853f054281c13c8ff244927, type: 3}
   cloneDuration: 5
   maxCloneAttacks: 3
   duplicateChance: 0.6
+  damagePercentHealed: 0.25
+  cooldownReducedInSeconds: 0
 --- !u!1 &1653198206
 GameObject:
   m_ObjectHideFlags: 0
@@ -13969,11 +13971,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1341017713594058373, guid: a5d92b883f4bf0e4d946540d2bbf1ad5, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1341017713594058373, guid: a5d92b883f4bf0e4d946540d2bbf1ad5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4985753215507359180, guid: a5d92b883f4bf0e4d946540d2bbf1ad5, type: 3}
       propertyPath: m_Name
@@ -13981,7 +13983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4985753215507359180, guid: a5d92b883f4bf0e4d946540d2bbf1ad5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8281349351202365752, guid: a5d92b883f4bf0e4d946540d2bbf1ad5, type: 3}
       propertyPath: m_LocalPosition.x

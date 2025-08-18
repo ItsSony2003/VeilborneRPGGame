@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Skill Data - Remnant Cleanse
   m_EditorClassIdentifier: 
   skillName: Remnant Cleanse
-  skillDescription: The soul remnant now removes curses and negative effects on contact.
+  skillDescription: The soul remnant now removes all curses and negative effects
+    on contact.
   skillIcon: {fileID: 250909902, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
   skillCost: 3
   unlockDefault: 0

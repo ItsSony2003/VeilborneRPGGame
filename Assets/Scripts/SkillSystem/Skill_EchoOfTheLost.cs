@@ -9,6 +9,38 @@ public class Skill_EchoOfTheLost : Skill_Base
     [SerializeField] private int maxCloneAttacks = 3;
     [SerializeField] private float duplicateChance = 0.25f;
 
+    [Header("Heal Remnant upgrade")]
+    [SerializeField] private float damagePercentHealed = 0.25f;
+    [SerializeField] private float cooldownReducedInSeconds;
+
+    public float GetPercentOfDamageHealed()
+    {
+        if (CanBeRemnant() == false)
+            return 0;
+
+        return damagePercentHealed;
+    }
+
+    public float GetCooldownReducedInSeconds()
+    {
+        if (upgradeType != SkillUpgradeType.EchoClone_CooldownRemnant)
+            return 0;
+
+        return cooldownReducedInSeconds;
+    }
+
+    public bool CanRemoveNegativeEffect()
+    {
+        return upgradeType == SkillUpgradeType.EchoClone_CleanseRemnant;
+    }
+
+    public bool CanBeRemnant()
+    {
+        return upgradeType == SkillUpgradeType.EchoClone_HealRemnant
+            || upgradeType == SkillUpgradeType.EchoClone_CleanseRemnant
+            || upgradeType == SkillUpgradeType.EchoClone_CooldownRemnant;
+    }
+
     public float GetCloneDuplicateChance()
     {
         if (upgradeType != SkillUpgradeType.EchoClone_ChanceToDuplicate)

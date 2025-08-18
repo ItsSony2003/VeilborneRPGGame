@@ -14,7 +14,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
     [Header("Health Regen")]
     [SerializeField] private float regenInterval = 1;
     [SerializeField] private bool canRegenerateHealth = true;
-
+    public float lastDamageTaken {  get; private set; }
 
     [Header("On Damage Knockback")]
     [SerializeField] private float knockbackDuration = 0.15f;
@@ -70,7 +70,8 @@ public class Entity_Health : MonoBehaviour, IDamageable
         TakeKnockback(damageDealer, physicalDamageTaken);
         ReduceHealth(physicalDamageTaken + elementalDamageTaken);
 
-        //Debug.Log("Elemental damage Taken: " + elementalDamageTaken + " element: " + element);
+        // remnent total damage taken
+        lastDamageTaken = physicalDamageTaken + elementalDamageTaken;
 
         return true;
     }
