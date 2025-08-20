@@ -68,6 +68,8 @@ public class Skill_SwordThrow : Skill_Base
 
         currentSword = newSword.GetComponent<SkillObject_Sword>();
         currentSword.SetUpSword(this, GetThrowDirection());
+
+        SetSkillOnCooldown();
     }
 
     private GameObject GetSwordTypePrefab()

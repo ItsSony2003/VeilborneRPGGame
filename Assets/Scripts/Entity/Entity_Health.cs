@@ -9,12 +9,12 @@ public class Entity_Health : MonoBehaviour, IDamageable
     private Entity_Stats entityStats;
 
     [SerializeField] protected float currentHealth;
-    [SerializeField] protected bool isDead;
-
     [Header("Health Regen")]
     [SerializeField] private float regenInterval = 1;
     [SerializeField] private bool canRegenerateHealth = true;
     public float lastDamageTaken {  get; private set; }
+    public bool isDead {  get; private set; }
+    protected bool canTakeDamage = true;
 
     [Header("On Damage Knockback")]
     [SerializeField] private float knockbackDuration = 0.15f;
@@ -49,7 +49,7 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     public virtual bool TakeDamage(float damage, float elementalDamage, ElementType element, Transform damageDealer)
     {
-        if (isDead)
+        if (isDead || canTakeDamage == false)
             return false;
 
         if (AttackEvaded())
@@ -75,6 +75,8 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
         return true;
     }
+
+    public void SetCanTakeDamage(bool canTakeDamage) => this.canTakeDamage = canTakeDamage;
 
     private bool AttackEvaded()
     {
@@ -120,6 +122,10 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
         // Entity Died
         entity.EntityDeath();
+
+        // disable healthbar (CAN BE USED LATER)
+        //if (healthBar != null)
+        //    healthBar.gameObject.SetActive(false);
     }
 
     public float GetHealthPercent() => currentHealth / entityStats.GetMaxHealth();

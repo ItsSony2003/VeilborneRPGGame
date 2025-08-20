@@ -22,13 +22,11 @@ public class Skill_Dash : Skill_Base
 
     private void CreateShard()
     {
-        skillManager.shard.CreateDashShard();
+        skillManager.shard.CreateRawShard();
     }
 
     private void CreateClone()
     {
-        Debug.Log("Create Clone Echo");
-
-        // sklill nmanager clone create
+        skillManager.echoOfTheLost.CreateClone();
     }
 }

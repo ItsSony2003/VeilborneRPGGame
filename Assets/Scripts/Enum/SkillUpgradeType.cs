@@ -34,4 +34,9 @@ public enum SkillUpgradeType
                         // Heal is equal to the percentage of damage taken when died
     EchoClone_CleanseRemnant, // Wisp can remove negative effects (debuff, burn, slow,...) from player
     EchoClone_CooldownRemnant, // Wisp reduce cooldown of all skills by N seconds
+
+    // ----------- Sanctum of Silence (Ultimate Skill) Tree ------------
+    Sanctum_SlowDown, // create an area which slow down enemies by 90-100%, only you can move freely
+    Sanctum_MultiClone, // you can't move, but spawn multiple clone
+    Sanctum_MultiShard// you can't move, but spawn multiple shard
 }

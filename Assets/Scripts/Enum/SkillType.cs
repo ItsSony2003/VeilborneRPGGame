@@ -5,6 +5,7 @@ public enum SkillType
     Dash,
     EchoClone,
     WraithcoreShard,
-    RiftfangSwordThrow
+    RiftfangSwordThrow,
+    SanctumOfSilence
 }
     

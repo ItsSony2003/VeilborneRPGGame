@@ -6,6 +6,7 @@ public class Player_SkillManager : MonoBehaviour
     public Skill_Shard shard { get; private set; }
     public Skill_SwordThrow swordThrow { get; private set; }
     public Skill_EchoOfTheLost echoOfTheLost { get; private set; }
+    public Skill_SanctumOfSilence sanctumOfSilence { get; private set; }
 
     private Skill_Base[] allSkills;
 
@@ -15,6 +16,7 @@ public class Player_SkillManager : MonoBehaviour
         shard = GetComponentInChildren<Skill_Shard>();
         swordThrow = GetComponentInChildren<Skill_SwordThrow>();
         echoOfTheLost = GetComponentInChildren<Skill_EchoOfTheLost>();
+        sanctumOfSilence = GetComponentInChildren<Skill_SanctumOfSilence>();
 
         allSkills = GetComponentsInChildren<Skill_Base>();
     }
@@ -33,6 +35,7 @@ public class Player_SkillManager : MonoBehaviour
             case SkillType.WraithcoreShard: return shard;
             case SkillType.RiftfangSwordThrow: return swordThrow;
             case SkillType.EchoClone: return echoOfTheLost;
+            case SkillType.SanctumOfSilence: return sanctumOfSilence;
 
             default:
                 Debug.Log($"SKill type {type} is not implemented yet!");

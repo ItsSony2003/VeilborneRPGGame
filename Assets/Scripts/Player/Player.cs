@@ -30,6 +30,7 @@ public class Player : Entity
     public Player_DeadState deadState { get; private set; }
     public Player_CounterAttackState counterAttackState { get; private set; }
     public Player_SwordThrowState swordThrowState { get; private set; }
+    public Player_SanctumOfSilenceState sanctumOfSilenceState { get; private set; }
     #endregion
 
 
@@ -39,6 +40,10 @@ public class Player : Entity
     public float attackVelocityDuration = 0.1f;
     public float comboResetTime = 1.5f;
     private Coroutine queueBasicAttackCo;
+
+    [Header("Ultimate Skill Details")]
+    public float jumpSkillSpeed = 30;
+    public float jumpSkillMaxDistance = 7;
 
     [Header("Movement Details")]
     public float runSpeed;
@@ -81,6 +86,7 @@ public class Player : Entity
         deadState = new Player_DeadState(this, stateMachine, "dead");
         counterAttackState = new Player_CounterAttackState(this, stateMachine, "counterAttack");
         swordThrowState = new Player_SwordThrowState(this, stateMachine, "swordThrow");
+        sanctumOfSilenceState = new Player_SanctumOfSilenceState(this, stateMachine, "jumpFall");
     }
 
     protected override void Start()

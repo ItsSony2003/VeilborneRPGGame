@@ -26,6 +26,16 @@ public abstract class PlayerState : EntityState
             skillManager.dash.SetSkillOnCooldown();
             stateMachine.ChangeState(player.dashState);
         }
+
+        if (input.Player.Ultimate.WasPressedThisFrame() && skillManager.sanctumOfSilence.CanUseSkill())
+        {
+            if (skillManager.sanctumOfSilence.InstantSanctum())
+                skillManager.sanctumOfSilence.CreateSanctum();
+            else
+                stateMachine.ChangeState(player.sanctumOfSilenceState);
+
+            skillManager.sanctumOfSilence.SetSkillOnCooldown();
+        }
     }
 
     public override void UpdateAnimationParameters()
@@ -43,7 +53,7 @@ public abstract class PlayerState : EntityState
         if (player.wallDetected)
             return false;
 
-        if (stateMachine.currentState == player.dashState)
+        if (stateMachine.currentState == player.dashState || stateMachine.currentState == player.sanctumOfSilenceState)
             return false;
 
         return true;
