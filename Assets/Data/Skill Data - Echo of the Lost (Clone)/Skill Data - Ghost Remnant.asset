@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Ghost Remnant
   skillDescription: When the ghost fades, it leaves behind a soul remnant that slowly
     follows and heals you.
-  skillIcon: {fileID: -1389487997, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 62f2a2df2a3c33b46ae47565ebc68fa7, type: 3}
   skillCost: 2
   unlockDefault: 0
   skillType: 1

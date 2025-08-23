@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Phantom Chain
   skillDescription: The clone has a chance to spawn another echo. Can chain indefinitely.
-  skillIcon: {fileID: 1695495405, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 157ec29b0d734c14588bed17d24530c1, type: 3}
   skillCost: 3
   unlockDefault: 0
   skillType: 1

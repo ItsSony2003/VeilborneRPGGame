@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Phantom Strike
   skillDescription: Your ghost double now performs a single attack before vanishing.
-  skillIcon: {fileID: 993397031, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 57b2962cb3de5e240bcbc2d2ebbf38a2, type: 3}
   skillCost: 2
   unlockDefault: 0
   skillType: 1

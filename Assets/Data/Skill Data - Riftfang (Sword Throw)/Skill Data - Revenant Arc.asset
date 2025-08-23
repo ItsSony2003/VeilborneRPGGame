@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Revenant Arc
   skillDescription: The blade ricochetes between enemies up to N times.
-  skillIcon: {fileID: -1721089528, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: e258e72f09a2f2f4da2304b4c7d51f72, type: 3}
   skillCost: 2
   unlockDefault: 0
   skillType: 3

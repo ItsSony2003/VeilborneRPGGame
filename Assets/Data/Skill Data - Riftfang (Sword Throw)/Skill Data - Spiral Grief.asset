@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Spiral Grief
   skillDescription: The blade spins in place for a few seconds, shredding nearby
     enemies.
-  skillIcon: {fileID: 1270201973, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 2361c57f21e14c5428afb0e9b346fea8, type: 3}
   skillCost: 2
   unlockDefault: 0
   skillType: 3

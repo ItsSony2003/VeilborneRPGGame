@@ -16,7 +16,7 @@ MonoBehaviour:
   skillDescription: Forge a shard of crystallized soul essence, pulsing with spectral
     light. It shatters in a burst of energy when struck by an enemy or when its time
     runs out.
-  skillIcon: {fileID: 1573931027, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 04e9fe1564b575946888ad95f2329a57, type: 3}
   skillCost: 1
   unlockDefault: 0
   skillType: 2

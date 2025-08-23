@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
   m_Name: Skill Data - Shard Departure
   m_EditorClassIdentifier: 
+  skillName: Shard Departure
+  skillDescription: 'Leave behind a fragment of crystallized soul energy at the point
+    where you vanished.
+
+    (Inherits all upgrades from the Echo of the Lost skill
+    tree)'
+  skillIcon: {fileID: 21300000, guid: 6930eed23d6489c48998c0c7bc097219, type: 3}
   skillCost: 2
   unlockDefault: 0
   skillType: 0
@@ -28,10 +35,3 @@ MonoBehaviour:
       lightningDuration: 3
       lightningDamageScale: 1
       lightningCharge: 0.4
-  skillName: Shard Departure
-  skillDescription: 'Leave behind a fragment of crystallized soul energy at the point
-    where you vanished.
-
-    (Inherits all upgrades from the Echo of the Lost skill
-    tree)'
-  skillIcon: {fileID: -2052459335, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}

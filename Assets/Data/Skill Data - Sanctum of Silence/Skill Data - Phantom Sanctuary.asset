@@ -16,7 +16,7 @@ MonoBehaviour:
   skillDescription: The void collapses into perfect stillness. Phantoms of yourself
     multiply endlessly in the silence, and even your echoes may spawn new echoes,
     an unending host swarming the frozen world.
-  skillIcon: {fileID: 1416755679, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 59831d8c84dee9a4ca29a0eb77930899, type: 3}
   skillCost: 4
   unlockDefault: 0
   skillType: 4

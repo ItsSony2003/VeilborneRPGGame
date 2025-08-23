@@ -12,13 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
   m_Name: Skill Data - Wraithbind Restoration
   m_EditorClassIdentifier: 
+  skillName: Wraithbind Restoration
+  skillDescription: Returning to the shard binds your essence to the moment it was
+    forged, restoring your HP to the value you had upon its creation.
+  skillIcon: {fileID: 21300000, guid: 38c4ba5394defd644a7f1d5c83ef7557, type: 3}
   skillCost: 3
   unlockDefault: 0
   skillType: 2
   upgradeData:
     upgradeType: 10
     cooldown: 4
-  skillName: Wraithbind Restoration
-  skillDescription: Returning to the shard binds your essence to the moment it was
-    forged, restoring your HP to the value you had upon its creation.
-  skillIcon: {fileID: 718465250, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+    damageScaleData:
+      physical: 1
+      elemental: 1
+      slowDuration: 3
+      slowMultiplier: 0.25
+      burnDuration: 3
+      burnDamageScale: 1
+      lightningDuration: 3
+      lightningDamageScale: 1
+      lightningCharge: 0.4

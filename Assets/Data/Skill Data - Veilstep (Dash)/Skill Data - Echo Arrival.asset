@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
   m_Name: Skill Data - Echo Arrival
   m_EditorClassIdentifier: 
+  skillName: Echo Arrival
+  skillDescription: 'Upon reappearing, summon a phantom echo that lingers to haunt
+    your foes.
+
+    (Inherits all upgrades from the Echo of the Lost skill tree)'
+  skillIcon: {fileID: 21300000, guid: 3e46b16cc5a14904980eec0f15db248b, type: 3}
   skillCost: 3
   unlockDefault: 0
   skillType: 0
@@ -28,9 +34,3 @@ MonoBehaviour:
       lightningDuration: 3
       lightningDamageScale: 1
       lightningCharge: 0.4
-  skillName: Echo Arrival
-  skillDescription: 'Upon reappearing, summon a phantom echo that lingers to haunt
-    your foes.
-
-    (Inherits all upgrades from the Echo of the Lost skill tree)'
-  skillIcon: {fileID: -1745823364, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}

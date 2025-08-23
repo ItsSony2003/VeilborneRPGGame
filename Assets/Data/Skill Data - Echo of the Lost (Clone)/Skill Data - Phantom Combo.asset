@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Phantom Combo
   skillDescription: The clone performs a 3-hit combo before vanishing.
-  skillIcon: {fileID: -1628940966, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 06b965e4d78674d4e81258733b0d15ca, type: 3}
   skillCost: 3
   unlockDefault: 0
   skillType: 1

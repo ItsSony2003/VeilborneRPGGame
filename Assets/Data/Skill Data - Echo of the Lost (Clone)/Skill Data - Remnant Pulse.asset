@@ -15,7 +15,7 @@ MonoBehaviour:
   skillName: Remnant Pulse
   skillDescription: The soul remnant now also reduces skill cooldowns when it reaches
     you.
-  skillIcon: {fileID: -511382705, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 05a7ab0386c517b45932f4e1f4bdc307, type: 3}
   skillCost: 3
   unlockDefault: 0
   skillType: 1

@@ -16,7 +16,7 @@ MonoBehaviour:
   skillDescription: Step into a void where time falters. Enemies within are slowed
     almost to stillness, their movements reduced by nearly all, while you alone stride
     unhindered.
-  skillIcon: {fileID: -2101400980, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: e88ea3809dcac3f44b0cc15bd2e63d57, type: 3}
   skillCost: 4
   unlockDefault: 0
   skillType: 4

@@ -12,13 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33337e3f03e5cdb488eecd14a997fa40, type: 3}
   m_Name: Skill Data - Wraithbind Return
   m_EditorClassIdentifier: 
+  skillName: Wraithbind Return
+  skillDescription: "Invoke the shard as an anchor \u2014 press the skill again to
+    tear through the veil and reappear at its location."
+  skillIcon: {fileID: 21300000, guid: 8fe6a2b2442073341904d1b3ba7176de, type: 3}
   skillCost: 2
   unlockDefault: 0
   skillType: 2
   upgradeData:
     upgradeType: 9
     cooldown: 4
-  skillName: Wraithbind Return
-  skillDescription: "Invoke the shard as an anchor \u2014 press the skill again to
-    tear through the veil and reappear at its location."
-  skillIcon: {fileID: 1020866607, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+    damageScaleData:
+      physical: 1
+      elemental: 1
+      slowDuration: 3
+      slowMultiplier: 0.25
+      burnDuration: 3
+      burnDamageScale: 1
+      lightningDuration: 3
+      lightningDamageScale: 1
+      lightningCharge: 0.4

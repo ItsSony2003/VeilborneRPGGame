@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Riftfang
   skillDescription: Hurl your spectral blade to damage enemies.
-  skillIcon: {fileID: 1532748941, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: d466dd3627bca22428ea6dcd246dbfdc, type: 3}
   skillCost: 1
   unlockDefault: 0
   skillType: 3

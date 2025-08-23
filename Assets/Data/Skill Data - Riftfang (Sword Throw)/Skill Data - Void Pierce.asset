@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Void Pierce
   skillDescription: The blade pierces through up to 5 enemies in a line.
-  skillIcon: {fileID: 1467603753, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  skillIcon: {fileID: 21300000, guid: 293ab249777a8a742afb88a2b8c6be0f, type: 3}
   skillCost: 2
   unlockDefault: 0
   skillType: 3
