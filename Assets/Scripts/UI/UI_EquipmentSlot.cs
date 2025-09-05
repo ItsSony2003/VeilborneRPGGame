@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UI_EquipmentSlot : UI_ItemSlot
 {
@@ -7,5 +9,13 @@ public class UI_EquipmentSlot : UI_ItemSlot
     private void OnValidate()
     {
         gameObject.name = "UI_EquipmentSlot: " + slotType.ToString();
+    }
+
+    public override void OnPointerDown(PointerEventData eventData)
+    {
+        if (itemInSlot == null)
+            return;
+
+        inventory.UnequipItem(itemInSlot);
     }
 }

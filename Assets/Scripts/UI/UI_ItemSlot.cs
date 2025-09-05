@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler
 {
     public Inventory_Item itemInSlot {  get; private set; }
-    private Inventory_Player inventory;
+    protected Inventory_Player inventory;
 
     [Header("UI Stat Setup")]
     [SerializeField] private Image itemIcon;
@@ -17,7 +17,7 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler
         inventory = FindAnyObjectByType<Inventory_Player>();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
         if (itemInSlot == null)
             return;
