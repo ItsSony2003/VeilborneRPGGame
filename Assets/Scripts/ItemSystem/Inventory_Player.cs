@@ -4,7 +4,7 @@ using UnityEngine;
 public class Inventory_Player : Inventory_Base
 {
     private Entity_Stats playerStats;
-    public List<Inventory_EquipmentSlot> equipmentList;
+    public List<Inventory_EquipmentSlot> equipmentList; // DO NOT TOUCH THIS OR IT WILL CRASH FOR SOME REASON
 
     protected override void Awake()
     {
