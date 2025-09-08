@@ -36,7 +36,7 @@ public class Inventory_Base : MonoBehaviour
         //    return;
         //}
 
-        var existingStackable = StackableItems(itemToAdd);
+        Inventory_Item existingStackable = StackableItems(itemToAdd);
         if (existingStackable != null)
             existingStackable.AddStack();
         else

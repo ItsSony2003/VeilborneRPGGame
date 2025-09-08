@@ -16,6 +16,4 @@ public class Stat_OffenseStats
     public Stat fireDamage;
     public Stat iceDamage;
     public Stat lightningDamage;
-    //public Stat darknessDamage;
-    //public Stat poisonDamage;
 }

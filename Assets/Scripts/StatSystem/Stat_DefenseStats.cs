@@ -12,6 +12,4 @@ public class Stat_DefenseStats
     public Stat fireRes;
     public Stat iceRes;
     public Stat lightningRes;
-    //public Stat darknessRes;
-    //public Stat poisonRes;
 }

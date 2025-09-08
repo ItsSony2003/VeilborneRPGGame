@@ -18,8 +18,6 @@ public class Stat_SetupDataSO : ScriptableObject
     public float fireDamage;
     public float iceDamage;
     public float lightningDamage;
-    //public float poisonDamage;
-    //public float darknessDamage;
 
     [Header("Defense - Physical")]
     public float armor;
@@ -29,8 +27,6 @@ public class Stat_SetupDataSO : ScriptableObject
     public float fireResistance;
     public float iceResistance;
     public float lightningResistance;
-    //public float poisonResistance;
-    //public float darknessResistance;
 
     [Header("Major Stats")]
     public float strength;
