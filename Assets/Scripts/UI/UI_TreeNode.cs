@@ -42,6 +42,9 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void Refund()
     {
+        if (isUnlocked == false || skillData.unlockDefault)
+            return;
+
         isUnlocked = false;
         isLocked = false;
         UpdateIconColor(ConvertColorFromHex(lockedColorHex));
