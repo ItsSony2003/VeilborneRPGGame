@@ -60,6 +60,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ToggleInventoryUI",
+                    "type": "Button",
+                    "id": "ba9f0270-f419-45ab-b36b-20487b16815d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Spell",
                     "type": "Button",
                     "id": "042c13ce-29e1-4f46-83e2-f4859618893a",
@@ -248,6 +257,17 @@
                     "processors": "",
                     "groups": ";Keyboard & Mouse",
                     "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2985dacb-ff65-4df6-809b-18029f4f0e53",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard & Mouse",
+                    "action": "ToggleInventoryUI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

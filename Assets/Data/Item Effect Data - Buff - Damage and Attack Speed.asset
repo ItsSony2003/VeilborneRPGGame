@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a377ef98d4e586449cc9ef57206c790, type: 3}
+  m_Name: Item Effect Data - Buff - Damage and Attack Speed
+  m_EditorClassIdentifier: 
+  effectDescription: +10 Damage and +50% Attack Speed for 10 seconds
+  buffsToApply:
+  - type: 6
+    value: 0.5
+  - type: 7
+    value: 15
+  duration: 10
+  source: 6bd15f15-8da7-4e52-951a-0f550576b78d

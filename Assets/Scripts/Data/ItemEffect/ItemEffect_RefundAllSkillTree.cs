@@ -6,6 +6,6 @@ public class ItemEffect_RefundAllSkillTree : ItemEffect_DataSO
     public override void ExecuteEffect()
     {
         UI ui = FindAnyObjectByType<UI>();
-        ui.skillTree.RefundAllSkills();
+        ui.skillTreeUI.RefundAllSkills();
     }
 }
