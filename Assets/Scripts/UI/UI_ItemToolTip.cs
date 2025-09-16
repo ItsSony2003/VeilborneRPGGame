@@ -37,6 +37,13 @@ public class UI_ItemToolTip : UI_ToolTip
             sb.AppendLine("+ " + modifierValue + " " + modifierType);
         }
 
+        if (item.itemEffect != null)
+        {
+            sb.AppendLine("");
+            sb.AppendLine("Unique Trait:");
+            sb.AppendLine(item.itemEffect.effectDescription);
+        }
+
         return sb.ToString();
     }
 

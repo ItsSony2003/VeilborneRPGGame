@@ -39,6 +39,9 @@ public class Inventory_Item
         }
     }
 
+    public void AddItemEffect(Player player) => itemEffect?.Apply(player);
+    public void RemoveItemEffect() => itemEffect?.Remove();
+
     private Equipment_DataSO EquipmentData()
     {
         if (itemData is  Equipment_DataSO equipment)

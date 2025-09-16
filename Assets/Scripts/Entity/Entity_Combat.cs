@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 // This script is for target detection when attack by both enemy and player
 public class Entity_Combat : MonoBehaviour
 {
+    public event Action<float> OnDoingPhysicalDamage;
+
     private Entity_VFX vfx;
     private Entity_Stats stats;
 
@@ -41,7 +44,10 @@ public class Entity_Combat : MonoBehaviour
                 statusHandler?.ApplyStatusEffect(element, attackData.effectData);
 
             if (targetGotHit)
+            {
+                OnDoingPhysicalDamage?.Invoke(physicalDamage);
                 vfx.CreateOnHitVFX(target.transform, attackData.isCrit, element);
+            }
         }
     }
 

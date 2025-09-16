@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be483ba071f5d54aa4b8d094722aa57, type: 3}
+  m_Name: Item Effect Data - Ice Blast on Taking Damage
+  m_EditorClassIdentifier: 
+  effectDescription: When you take damage and health is under 25%, an ice blast will
+    be released, dealing 150% ice damage tonearby enemies. Cooldown 45 seconds.
+  effectData:
+    slowDuration: 3
+    slowMultiplier: 0.5
+    burnDuration: 0
+    burnDamage: 0
+    lightningDuration: 0
+    lightningDamage: 0
+    lightningCharge: 0
+  iceDamage: 50
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 256
+  healthTrigger: 0.25
+  cooldown: 45
+  iceBlastVfx: {fileID: 5547684347638298467, guid: cb700f7e5ecb7394791a24394509e2a8, type: 3}
+  onHitVfx: {fileID: 858197997249343636, guid: f2794f9075ba4aa479d5e66ef6954189, type: 3}
