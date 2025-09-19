@@ -1,0 +1,36 @@
+using UnityEngine;
+
+public class Object_Crafter : Object_NPC, IInteractable
+{
+    private Inventory_Player inventory;
+    private Inventory_Storage storage;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        storage = GetComponent<Inventory_Storage>();
+    }
+
+    public void Interact()
+    {
+        ui.storageUI.SetUpStorage(inventory, storage);
+        ui.storageUI.gameObject.SetActive(true);
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+
+        inventory = player.GetComponent<Inventory_Player>();
+        storage.SetInventory(inventory);
+    }
+
+    protected override void OnTriggerExit2D(Collider2D collision)
+    {
+        base.OnTriggerExit2D(collision);
+
+        ui.SwitchOffAllToolTips();
+        ui.storageUI.gameObject.SetActive(false);
+    }
+}
