@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using UnityEngine;
 
 [Serializable]
@@ -53,4 +54,84 @@ public class Inventory_Item
     public bool CanAddStack() => stackSize < itemData.maxStackSize;
     public void AddStack() => stackSize++;
     public void RemoveStack() => stackSize--;
+
+    public string GetItemDescription()
+    {
+        if (itemData.itemType == ItemType.Material)
+            return "Used for Creafing!";
+
+        if (itemData.itemType == ItemType.Consumable)
+            return itemData.itemEffect.effectDescription;
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.AppendLine("");
+
+        foreach (var modifier in modifiers)
+        {
+            string modifierType = GetStatNameByType(modifier.statType);
+            string modifierValue = IsPercentageStat(modifier.statType) ? modifier.value.ToString() + "%" : modifier.value.ToString();
+
+            sb.AppendLine("+ " + modifierValue + " " + modifierType);
+        }
+
+        if (itemEffect != null)
+        {
+            sb.AppendLine("");
+            sb.AppendLine("Unique Trait:");
+            sb.AppendLine(itemEffect.effectDescription);
+        }
+
+        return sb.ToString();
+    }
+
+    private string GetStatNameByType(StatType type)
+    {
+        switch (type)
+        {
+            case StatType.Strength: return "Strength";
+            case StatType.Agility: return "Agility";
+            case StatType.Intelligence: return "Intelligence";
+            case StatType.Vitality: return "Vitality";
+
+            case StatType.AttackSpeed: return "Attack Speed";
+            case StatType.Damage: return "Attack Damage";
+            case StatType.CritChance: return "Crit Chance";
+            case StatType.CritPower: return "Crit Power";
+            case StatType.ArmorReduction: return "Armor Reduction";
+
+            case StatType.FireDamage: return "Fire Damage";
+            case StatType.IceDamage: return "Ice Damage";
+            case StatType.LightningDamage: return "Lightning Damage";
+
+            case StatType.MaxHealth: return "Max Health";
+            case StatType.HealthRegen: return "Health Regeneration";
+            case StatType.Armor: return "Armor";
+            case StatType.Evasion: return "Evasion";
+
+            case StatType.FireResistance: return "Fire Resistance";
+            case StatType.IceResistance: return "Ice Resistance";
+            case StatType.LightningResistance: return "Lightning Resistance";
+            default:
+                return "Unknown Stat";
+        }
+    }
+
+    private bool IsPercentageStat(StatType type)
+    {
+        switch (type)
+        {
+            case StatType.CritChance:
+            case StatType.CritPower:
+            case StatType.ArmorReduction:
+            case StatType.AttackSpeed:
+            case StatType.Evasion:
+            case StatType.FireResistance:
+            case StatType.IceResistance:
+            case StatType.LightningResistance:
+                return true;
+            default:
+                return false;
+        }
+    }
 }

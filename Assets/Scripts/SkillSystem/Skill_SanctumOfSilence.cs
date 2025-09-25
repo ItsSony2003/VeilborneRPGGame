@@ -21,7 +21,7 @@ public class Skill_SanctumOfSilence : Skill_Base
     [SerializeField] private int cloneToCast = 16;
     [SerializeField] private float cloneCastSanctumSlow = 1;
     [SerializeField] private float cloneCastSanctumDuration = 6;
-    [SerializeField] private float healthRestore = 0.08f;
+    //[SerializeField] private float healthRestore = 0.08f;
 
     [Header("Domain Details")]
     public float maxSanctumSize = 15;
