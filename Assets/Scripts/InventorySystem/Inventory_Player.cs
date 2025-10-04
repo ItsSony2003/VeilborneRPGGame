@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Inventory_Player : Inventory_Base
 {
+    public int gold = 100000;
+
     private Player player;
     public List<Inventory_EquipmentSlot> equipmentList; // DO NOT TOUCH THIS OR IT WILL CRASH FOR SOME REASON
     public Inventory_Storage storage {  get; private set; }

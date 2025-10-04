@@ -17,6 +17,10 @@ public class UI_StorageSlot : UI_ItemSlot
 
     public override void OnPointerDown(PointerEventData eventData)
     {
+        // Only respond to LEFT click
+        if (eventData.button != PointerEventData.InputButton.Left)
+            return;
+
         if (itemInSlot == null)
             return;
 

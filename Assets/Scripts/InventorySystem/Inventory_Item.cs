@@ -13,11 +13,16 @@ public class Inventory_Item
     public ItemModifier[] modifiers {  get; private set; }
     public ItemEffect_DataSO itemEffect;
 
+    public int buyPrice {  get; private set; }
+    public float sellPrice { get; private set; }
+
     public Inventory_Item(Item_DataSO itemData)
     {
         this.itemData = itemData;
         modifiers = EquipmentData()?.modifiers;
         itemEffect = itemData.itemEffect;
+        buyPrice = itemData.itemPrice;
+        sellPrice = itemData.itemPrice * 0.5f;
 
         itemId = itemData.itemName + " - " + Guid.NewGuid();
     }
