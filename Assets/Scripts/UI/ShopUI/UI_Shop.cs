@@ -7,13 +7,14 @@ public class UI_Shop : MonoBehaviour
 
     [SerializeField] private UI_ItemSlotParent shopSlots;
     [SerializeField] private UI_ItemSlotParent inventorySlots;
+    [SerializeField] private UI_EquipmentSlotParent equipmentSlots;
 
     public void SetupShopUI(Inventory_Shop shop, Inventory_Player inventory)
     {
         this.shop = shop;
         this.inventory = inventory;
 
-        shop.OnInventoryChange += UpdateSlotUI;
+        this.inventory.OnInventoryChange += UpdateSlotUI;
         UpdateSlotUI();
 
         UI_ShopSlot[] shopSlots = GetComponentsInChildren<UI_ShopSlot>();
@@ -24,7 +25,11 @@ public class UI_Shop : MonoBehaviour
 
     private void UpdateSlotUI()
     {
+        if (inventory == null)
+            return;
+
         inventorySlots.UpdateSlots(inventory.itemList);
         shopSlots.UpdateSlots(shop.itemList);
+        equipmentSlots.UpdateEquipmentSlots(inventory.equipmentList);
     }
 }

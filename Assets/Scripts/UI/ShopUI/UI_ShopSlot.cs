@@ -24,7 +24,7 @@ public class UI_ShopSlot : UI_ItemSlot
             }
             else if (leftButton)
             {
-                return;
+                base.OnPointerDown(eventData);
             }
         }
         else if (slotType == ShopSlotType.ShopSlot)
@@ -40,6 +40,17 @@ public class UI_ShopSlot : UI_ItemSlot
         }
 
         ui.itemToolTip.ShowToolTip(false, null);
+    }
+
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        if (itemInSlot == null)
+            return;
+
+        if (slotType == ShopSlotType.ShopSlot)
+            ui.itemToolTip.ShowToolTip(true, rect, itemInSlot, true, true);
+        else
+            ui.itemToolTip.ShowToolTip(true, rect, itemInSlot, false, true);
     }
 
     public void SetupShopUI(Inventory_Shop shop) => this.shop = shop;
