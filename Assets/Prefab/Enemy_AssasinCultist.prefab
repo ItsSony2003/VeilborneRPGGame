@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 2995379375776408505}
   - component: {fileID: 539742307794574586}
   - component: {fileID: 5377513752480945218}
+  - component: {fileID: 6153273685436791937}
   m_Layer: 8
   m_Name: Enemy_AssasinCultist
   m_TagString: Untagged
@@ -870,16 +871,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff776971ca28c646a97d7074a63daae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basicAttackScale:
+    physical: 1
+    elemental: 1
+    slowDuration: 3
+    slowMultiplier: 0.25
+    burnDuration: 3
+    burnDamageScale: 1
+    lightningDuration: 3
+    lightningDamageScale: 1
+    lightningCharge: 0.4
   targetCheck: {fileID: 6215491473982843012}
   targetCheckRadius: 1
   whatIsTarget:
     serializedVersion: 2
     m_Bits: 128
-  defaultDuration: 3
-  chillSlowMultiplier: 0.25
-  lightningChargeBuildUp: 0.4
-  fireScale: 0.8
-  lightningScale: 2.5
 --- !u!114 &225478082607080541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  isDead: 0
   regenInterval: 1
   canRegenerateHealth: 1
   knockbackDuration: 0.15
@@ -918,7 +923,7 @@ MonoBehaviour:
   hitVfxColor: {r: 1, g: 1, b: 1, a: 1}
   hitVfx: {fileID: 858197997249343636, guid: f2794f9075ba4aa479d5e66ef6954189, type: 3}
   critHitVfx: {fileID: 8215075865357968818, guid: 743d4c22da6c6aa44b26417f40a866ba, type: 3}
-  chillVfx: {r: 0, g: 0.64705884, b: 1, a: 1}
+  slowVfx: {r: 0, g: 1, b: 1, a: 1}
   fireVfx: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   lightningVfx: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   attackAlert: {fileID: 0}
@@ -1011,6 +1016,22 @@ MonoBehaviour:
   lightingHitVfx: {fileID: 5024855917835500629, guid: dee1c1a7bfad7a940825a92239d35cb4, type: 3}
   currentCharge: 0
   maxmimumCharge: 1
+--- !u!114 &6153273685436791937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985753215507359180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd6d4ad936ed1f43a12f71eb3321922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDropPrefab: {fileID: 3973976076058371890, guid: 2cbcb27f96a50d64198318cbf6366615, type: 3}
+  dropData: {fileID: 11400000, guid: 3e49789397c60064b9d36ef9669e0aa5, type: 2}
+  maxRarityAmount: 1200
+  maxItemToDrop: 2
 --- !u!1 &5648159608728404875
 GameObject:
   m_ObjectHideFlags: 0

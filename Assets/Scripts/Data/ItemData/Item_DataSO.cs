@@ -9,6 +9,14 @@ public class Item_DataSO : ScriptableObject
     public int minStackSizeAtShop = 1;
     public int maxStackSizeAtShop = 1;
 
+    [Header("Item Drop Details")]
+    [Range(0, 1000)]
+    public int itemRarity = 100;
+    [Range(0, 100)]
+    public float dropChance;
+    [Range(0, 100)]
+    public float maxDropChance = 70f;
+
     [Header("Craft Details")]
     public Inventory_Item[] craftRequirements;
 
@@ -21,4 +29,16 @@ public class Item_DataSO : ScriptableObject
     [Header("Item Effect Details")]
     public ItemEffect_DataSO itemEffect;
 
+    private void OnValidate()
+    {
+        dropChance = GetItemDropChance();
+    }
+
+    public float GetItemDropChance()
+    {
+        float maxRarity = 1000;
+        float chance = (maxRarity - itemRarity + 1) / maxRarity * 100; // no item drop chance is 0%, lowest is 0.1%
+        
+        return Mathf.Min(chance, maxDropChance);
+    }
 }

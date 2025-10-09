@@ -15,6 +15,7 @@ public class UI_Shop : MonoBehaviour
         this.inventory = inventory;
 
         this.inventory.OnInventoryChange += UpdateSlotUI;
+        this.shop.OnInventoryChange += UpdateSlotUI;
         UpdateSlotUI();
 
         UI_ShopSlot[] shopSlots = GetComponentsInChildren<UI_ShopSlot>();

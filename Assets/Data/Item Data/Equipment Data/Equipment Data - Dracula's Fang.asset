@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b510b08cf5f4454591011073cc5cd14, type: 3}
+  m_Name: Equipment Data - Dracula's Fang
+  m_EditorClassIdentifier: 
+  itemPrice: 100
+  minStackSizeAtShop: 1
+  maxStackSizeAtShop: 1
+  itemRarity: 965
+  dropChance: 3.6
+  maxDropChance: 70
+  craftRequirements:
+  - itemData: {fileID: 11400000, guid: 6e5106ae422787e43933e76cdbd82ae0, type: 2}
+    stackSize: 1
+    itemEffect: {fileID: 0}
+  - itemData: {fileID: 11400000, guid: 45141a7fb7fb9ad4d835cd29c64825ea, type: 2}
+    stackSize: 3
+    itemEffect: {fileID: 0}
+  itemName: Dracula's Fang
+  itemIcon: {fileID: 1794881219, guid: 8f622a2d657805244b4253ca0553c58a, type: 3}
+  itemType: 1
+  maxStackSize: 1
+  itemEffect: {fileID: 11400000, guid: d8009aa621245cd48a872c2ac2b794d0, type: 2}
+  modifiers:
+  - statType: 7
+    value: 10
+  - statType: 6
+    value: 0.12
+  - statType: 3
+    value: 5
