@@ -71,6 +71,7 @@ public class Skill_EchoOfTheLost : Skill_Base
             return;
 
         CreateClone();
+        SetSkillOnCooldown();
     }
 
     public void CreateClone(Vector3? targetPosition = null)
