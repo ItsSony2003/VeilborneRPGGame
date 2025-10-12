@@ -14,7 +14,7 @@ public class Inventory_Base : MonoBehaviour
 
     }
 
-    public void TryUseITem(Inventory_Item itemToUse)
+    public void TryUseItem(Inventory_Item itemToUse)
     {
         Inventory_Item consumable = itemList.Find(item => item == itemToUse);
 
@@ -86,5 +86,10 @@ public class Inventory_Base : MonoBehaviour
         return itemList.Find(item => item == itemToFind);
     }
     
+    public Inventory_Item FindSameItem(Inventory_Item itemToFind)
+    {
+        return itemList.Find(item => item.itemData == itemToFind.itemData);
+    }
+
     public void TriggerUpdateUI() => OnInventoryChange?.Invoke();
 }
