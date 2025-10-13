@@ -105,7 +105,7 @@ public class Inventory_Storage : Inventory_Base
         else
         {
             var newItemToAdd = new Inventory_Item(itemToAdd.itemData);
-            materialStash.Add(itemToAdd);
+            materialStash.Add(newItemToAdd);
         }
 
         TriggerUpdateUI();
@@ -114,15 +114,7 @@ public class Inventory_Storage : Inventory_Base
 
     public Inventory_Item StackableMaterialStash(Inventory_Item itemToAdd)
     {
-        List<Inventory_Item> stackableItems = materialStash.FindAll(item => item.itemData == itemToAdd.itemData);
-
-        foreach (var stackable in stackableItems)
-        {
-            if (stackable.CanAddStack())
-                return stackable;
-        }
-
-        return null;
+        return materialStash.Find(item => item.itemData == itemToAdd.itemData && item.CanAddStack());
     }
 
     public void SetInventory(Inventory_Player inventory) => this.inventory = inventory;

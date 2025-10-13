@@ -156,7 +156,8 @@ public class UI_TreeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     // Hide Skills TollTip
     public void OnPointerExit(PointerEventData eventData)
     {
-        ui.skillToolTip.ShowTip(false, rect, skillData, this);
+        ui.skillToolTip.ShowToolTip(false, rect);
+        ui.skillToolTip.StopLockedSkillEffect();
 
         if (isUnlocked || isLocked)
             return;

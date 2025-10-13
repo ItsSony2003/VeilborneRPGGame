@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inventory_Base : MonoBehaviour
 {
+    protected Player player;
     public event Action OnInventoryChange;
 
     public int maxInventorySize = 36;
@@ -11,7 +12,7 @@ public class Inventory_Base : MonoBehaviour
 
     protected virtual void Awake()
     {
-
+        player = GetComponent<Player>();
     }
 
     public void TryUseItem(Inventory_Item itemToUse)
@@ -19,6 +20,9 @@ public class Inventory_Base : MonoBehaviour
         Inventory_Item consumable = itemList.Find(item => item == itemToUse);
 
         if (consumable == null)
+            return;
+
+        if (consumable.itemEffect.CanBeUsed(player) == false)
             return;
 
         consumable.itemEffect.ExecuteEffect();
@@ -39,15 +43,7 @@ public class Inventory_Base : MonoBehaviour
 
     public Inventory_Item StackableItems(Inventory_Item itemToAdd)
     {
-        List<Inventory_Item> stackableItems = itemList.FindAll(item => item.itemData == itemToAdd.itemData);
-
-        foreach (var stack in stackableItems)
-        {
-            if (stack.CanAddStack())
-                return stack;
-        }
-
-        return null;
+        return itemList.Find(item => item.itemData == itemToAdd.itemData && item.CanAddStack());
     }
 
     public virtual void AddItem(Inventory_Item itemToAdd)

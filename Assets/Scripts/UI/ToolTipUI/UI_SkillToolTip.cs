@@ -62,10 +62,14 @@ public class UI_SkillToolTip : UI_ToolTip
 
     public void LockedSkillEffect()
     {
+        StopLockedSkillEffect();
+        textEffectCo = StartCoroutine(TextBlinkingEffectCo(skillRequiments, 0.2f, 3));
+    }
+
+    public void StopLockedSkillEffect()
+    {
         if (textEffectCo != null)
             StopCoroutine(textEffectCo);
-
-        textEffectCo = StartCoroutine(TextBlinkingEffectCo(skillRequiments, 0.2f, 3));
     }
 
     private IEnumerator TextBlinkingEffectCo(TextMeshProUGUI text, float blinkInterval, int blinkCount)

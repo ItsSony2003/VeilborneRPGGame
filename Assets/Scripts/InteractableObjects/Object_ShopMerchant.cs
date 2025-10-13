@@ -25,7 +25,7 @@ public class Object_ShopMerchant : Object_NPC, IInteractable
     public void Interact()
     {
         ui.shopUI.SetupShopUI(shop, inventory);
-        ui.shopUI.gameObject.SetActive(true);
+        ui.OpenShopUI(true);
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -40,7 +40,7 @@ public class Object_ShopMerchant : Object_NPC, IInteractable
     {
         base.OnTriggerExit2D(collision);
 
-        ui.SwitchOffAllToolTips();
-        ui.shopUI.gameObject.SetActive(false);
+        ui.HideAllToolTips();
+        ui.OpenShopUI(false);
     }
 }
