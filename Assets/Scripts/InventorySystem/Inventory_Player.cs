@@ -5,7 +5,6 @@ using UnityEngine;
 public class Inventory_Player : Inventory_Base
 {
     public event Action<int> OnQuickSlotUsed;
-    [SerializeField] private ItemList_DataSO itemDataBase;
 
     public List<Inventory_EquipmentSlot> equipmentList; // DO NOT TOUCH THIS OR IT WILL CRASH FOR SOME REASON
     public Inventory_Storage storage {  get; private set; }
@@ -108,6 +107,7 @@ public class Inventory_Player : Inventory_Base
     {
         data.gold = gold;
         data.inventory.Clear();
+        data.equipedItems.Clear();
 
         foreach (var item in itemList)
         {
@@ -121,16 +121,22 @@ public class Inventory_Player : Inventory_Base
                 data.inventory[saveId] += item.stackSize;
             }
         }
+
+        foreach (var slot in equipmentList)
+        {
+            if (slot.Hasitem())
+                data.equipedItems[slot.equipedItem.itemData.saveId] = slot.slotType;
+        }
     }
 
     public override void LoadData(GameData data)
     {
         gold = data.gold;
 
-        foreach (var item in data.inventory)
+        foreach (var entry in data.inventory)
         {
-            string saveId = item.Key;
-            int stackSize = item.Value;
+            string saveId = entry.Key;
+            int stackSize = entry.Value;
 
             Item_DataSO itemData = itemDataBase.GetItemData(saveId);
 
@@ -145,6 +151,21 @@ public class Inventory_Player : Inventory_Base
                 Inventory_Item itemToLoad = new Inventory_Item(itemData);
                 AddItem(itemToLoad);
             }
+        }
+
+        foreach (var entry in data.equipedItems)
+        {
+            string saveId = entry.Key;
+            ItemType loadedSlotType = entry.Value;
+
+            Item_DataSO itemData = itemDataBase.GetItemData(saveId);
+            Inventory_Item itemToLoad = new Inventory_Item(itemData);
+
+            var slot = equipmentList.Find(slot => slot.slotType == loadedSlotType && slot.Hasitem() == false);
+
+            slot.equipedItem = itemToLoad;
+            slot.equipedItem.AddModifiers(player.stats);
+            slot.equipedItem.AddItemEffect(player);
         }
 
         TriggerUpdateUI();

@@ -8,7 +8,7 @@ public class Player_SkillManager : MonoBehaviour
     public Skill_EchoOfTheLost echoOfTheLost { get; private set; }
     public Skill_SanctumOfSilence sanctumOfSilence { get; private set; }
 
-    private Skill_Base[] allSkills;
+    public Skill_Base[] allSkills { get; private set; }
 
     private void Awake()
     {
