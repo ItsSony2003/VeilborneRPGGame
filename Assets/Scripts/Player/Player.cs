@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 public class Player : Entity
 {
+    public static Player instance;
     public static event Action OnPlayerDeath;
 
     public UI ui {  get; private set; }
@@ -67,6 +68,7 @@ public class Player : Entity
     protected override void Awake()
     {
         base.Awake();
+        instance = this;
 
         ui = FindAnyObjectByType<UI>();
         skillManager = GetComponent<Player_SkillManager>();

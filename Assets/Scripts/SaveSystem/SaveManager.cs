@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
+    public static SaveManager instance;
+
     public FileDataHandler dataHandler;
     private GameData gameData;
     private List<ISaveable> allSaveables;
 
     [SerializeField] private string fileName = "veilborne.json";
     [SerializeField] private bool encryptData = true;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private IEnumerator Start()
     {
@@ -44,6 +51,8 @@ public class SaveManager : MonoBehaviour
 
         dataHandler.SaveData(gameData);
     }
+
+    public GameData GetGameData() => gameData;
 
     [ContextMenu("*** DELELTE SAVE DATA ***")]
     public void DeleteSavedData()
