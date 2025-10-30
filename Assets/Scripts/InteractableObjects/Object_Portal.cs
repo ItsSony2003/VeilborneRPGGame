@@ -35,8 +35,6 @@ public class Object_Portal : MonoBehaviour
         if (canBeTriggered == false)
             return;
 
-        SaveManager.instance.SaveGame();
-
         // transfer to another level
         GameManager.instance.ChangeScene(transferToScene, connectedPortal);
     }

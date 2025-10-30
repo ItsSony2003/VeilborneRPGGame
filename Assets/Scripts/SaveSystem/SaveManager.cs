@@ -54,7 +54,7 @@ public class SaveManager : MonoBehaviour
 
     public GameData GetGameData() => gameData;
 
-    [ContextMenu("*** DELELTE SAVE DATA ***")]
+    [ContextMenu("*** DELETE SAVE DATA ***")]
     public void DeleteSavedData()
     {
         dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, encryptData);
