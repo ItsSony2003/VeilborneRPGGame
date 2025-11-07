@@ -3,10 +3,12 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
-    private Vector3 lastDeathPosition;
+    private Vector3 lastPlayerPosition;
+
+    public string lastScenePlayed;
 
     private void Awake()
     {
@@ -20,7 +22,17 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void GetLastDeathPosition(Vector3 position) => lastDeathPosition = position;
+    //public void GetLastPlayerPosition(Vector3 position) => lastPlayerPosition = position;
+
+    public void ContinuePlay()
+    {
+        if (string.IsNullOrEmpty(lastScenePlayed))
+            lastScenePlayed = "Market";
+        if (SaveManager.instance.GetGameData() == null)
+            lastScenePlayed = "Market";
+
+        ChangeScene(lastScenePlayed, RespawnType.None);
+    }
 
     public void RestartScene()
     {
@@ -31,6 +43,7 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string sceneName, RespawnType respawnType)
     {
         SaveManager.instance.SaveGame();
+        Time.timeScale = 1;
         StartCoroutine(ChangeSceneCo(sceneName, respawnType));
     }
 
@@ -43,6 +56,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
 
         yield return new WaitForSeconds(0.5f);
+
+        Player player = Player.instance;
+
+        if (player == null)
+            yield break;
 
         Vector3 position = GetNewPlayerPosition(respawnType);
 
@@ -84,7 +102,7 @@ public class GameManager : MonoBehaviour
                 return Vector3.zero;
 
             return selectedPositions
-                .OrderBy(position => Vector3.Distance(position, lastDeathPosition)) // arrange from closest to furthest distance
+                .OrderBy(position => Vector3.Distance(position, lastPlayerPosition)) // arrange from closest to furthest distance
                 .First();
         }
 
@@ -102,5 +120,25 @@ public class GameManager : MonoBehaviour
         }
 
         return Vector3.zero;
+    }
+
+    public void LoadData(GameData data)
+    {
+        lastScenePlayed = data.lastScenePlayed;
+        lastPlayerPosition = data.lastPlayerPosition;
+
+        if (string.IsNullOrEmpty(lastScenePlayed))
+            lastScenePlayed = "Market";
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "MainMenu")
+            return;
+
+        data.lastPlayerPosition = Player.instance.transform.position;
+        data.lastScenePlayed = currentScene;
     }
 }

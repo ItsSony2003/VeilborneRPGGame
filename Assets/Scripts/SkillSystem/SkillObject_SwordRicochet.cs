@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillObeject_SwordRicochet : SkillObject_Sword
+public class SkillObject_SwordRicochet : SkillObject_Sword
 {
     [SerializeField] private float bounceSpeed = 18;
     private int bounceCount;

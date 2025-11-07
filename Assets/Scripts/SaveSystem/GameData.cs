@@ -24,6 +24,9 @@ public class GameData
     public string teleportDestinationSceneName;
     public bool returningFromMarket;
 
+    public string lastScenePlayed;
+    public Vector3 lastPlayerPosition;
+
     public GameData()
     {
         inventory = new SerializableDictionary<string, int>();
