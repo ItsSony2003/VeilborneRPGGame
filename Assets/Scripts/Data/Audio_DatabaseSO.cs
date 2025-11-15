@@ -7,6 +7,11 @@ public class Audio_DatabaseSO : ScriptableObject
     public List<AudioClipData> playerAudio;
     public List<AudioClipData> uiAudio;
 
+    [Header("Music Playlists")]
+    public List<AudioClipData> mainMenuMusic;
+    public List<AudioClipData> levelMusic;
+    public List<AudioClipData> bossMusic;
+
     private Dictionary<string, AudioClipData> audioClipCollection;
 
     private void OnEnable()
@@ -15,6 +20,9 @@ public class Audio_DatabaseSO : ScriptableObject
 
         AddToCollection(playerAudio);
         AddToCollection(uiAudio);
+        AddToCollection(mainMenuMusic);
+        AddToCollection(levelMusic);
+        AddToCollection(bossMusic);
     }
 
     public AudioClipData GetAudio(string groupName)

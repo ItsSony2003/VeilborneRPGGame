@@ -16,13 +16,24 @@ MonoBehaviour:
   - audioName: player_attackHit
     clips:
     - {fileID: 8300000, guid: 2ebd13a426c68064186b66be1700977c, type: 3}
-    volume: 0.55
+    maxVolume: 0.55
   - audioName: player_attackMiss
     clips:
     - {fileID: 8300000, guid: a7cd2294668d932478af11bf40ac0b89, type: 3}
-    volume: 0.55
+    maxVolume: 0.55
   uiAudio:
   - audioName: button_click
     clips:
     - {fileID: 8300000, guid: 0ad6179539617b542881938e56685a30, type: 3}
-    volume: 1
+    maxVolume: 0.55
+  mainMenuMusic:
+  - audioName: playlist_menu
+    clips:
+    - {fileID: 8300000, guid: 7e39e7ff732af7543a83035f7281d5eb, type: 3}
+    maxVolume: 0.55
+  levelMusic:
+  - audioName: playlist_whisperingSpores
+    clips:
+    - {fileID: 8300000, guid: e52d1212e05cc3d41829daae1dde1bda, type: 3}
+    maxVolume: 0.55
+  bossMusic: []

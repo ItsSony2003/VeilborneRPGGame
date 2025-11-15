@@ -5,8 +5,8 @@ public class AudioDistanceController : MonoBehaviour
     private AudioSource audioSource;
     private Transform player;
 
-    private float minDistanceToHearSound = 25f;
-    private bool showGizmo;
+    [SerializeField] private float minDistanceToHearSound = 25f;
+    [SerializeField] private bool showGizmo;
     private float maxVolume;
 
     private void Start()
