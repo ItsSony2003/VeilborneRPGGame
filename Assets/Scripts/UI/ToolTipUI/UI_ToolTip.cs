@@ -32,14 +32,14 @@ public class UI_ToolTip : MonoBehaviour
 
         targetPosition.x = targetPosition.x > screenCenterX ? targetPosition.x - offset.x : targetPosition.x + offset.x;
 
-        float tipHalfHeight = rect.sizeDelta.y / 2;
-        float topHeight = targetPosition.y + tipHalfHeight;
-        float bottomHeight = targetPosition.y - tipHalfHeight;
+        float topHalfHeight = rect.sizeDelta.y / 2f;
+        float topHeight = targetPosition.y + topHalfHeight;
+        float bottomHeight = targetPosition.y - topHalfHeight;
 
         if (topHeight > screenTop)
-            targetPosition.y = screenTop - tipHalfHeight - offset.y;
+            targetPosition.y = screenTop - topHalfHeight - offset.y;
         else if (bottomHeight < screenBottom)
-            targetPosition.y = screenBottom + tipHalfHeight + offset.y;
+            targetPosition.y = screenBottom + topHalfHeight + offset.y;
 
         rect.position = targetPosition;
     }

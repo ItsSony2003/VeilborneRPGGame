@@ -30977,7 +30977,7 @@ MonoBehaviour:
   healthRect: {fileID: 4957532798834838308}
   healthSlider: {fileID: 5971295158906471119}
   healthText: {fileID: 933994107018761674}
-  yOffsetQuickItemParent: 220
+  yOffsetQuickItemParent: 0
   quickItemOptionsParent: {fileID: 8233758478896391866}
 --- !u!1 &3300346762622238301
 GameObject:
@@ -66789,7 +66789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164c3e25183574e4ebd6aec2368fd265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 350, y: 120}
+  offset: {x: 350, y: 150}
   skillName: {fileID: 1389041905403758813}
   skillDescription: {fileID: 4982320480805183042}
   skillCooldown: {fileID: 3323469416101464961}
