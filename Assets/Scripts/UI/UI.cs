@@ -3,6 +3,8 @@ using UnityEngine.Rendering;
 
 public class UI : MonoBehaviour
 {
+    public static UI instance;
+
     [SerializeField] private GameObject[] uiElements;
 
     public bool alternativeInput {  get; private set; }
@@ -20,6 +22,8 @@ public class UI : MonoBehaviour
     public UI_InGame inGameUI {  get; private set; }
     public UI_Options optionsUI { get; private set; }
     public UI_Death deathUI { get; private set; }
+
+    public UI_ScreenEffect screenEffectUI { get; private set; }
     #endregion
 
     private bool skillTreeEnabled;
@@ -27,6 +31,8 @@ public class UI : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
         itemToolTip = GetComponentInChildren<UI_ItemToolTip>();
         skillToolTip = GetComponentInChildren<UI_SkillToolTip>();
         statToolTip = GetComponentInChildren<UI_StatToolTip>();
@@ -39,6 +45,7 @@ public class UI : MonoBehaviour
         inGameUI = GetComponentInChildren<UI_InGame>(true);
         optionsUI = GetComponentInChildren<UI_Options>(true);
         deathUI = GetComponentInChildren<UI_Death>(true);
+        screenEffectUI = GetComponentInChildren<UI_ScreenEffect>(true);
 
         skillTreeEnabled = skillTreeUI.gameObject.activeSelf;
         inventoryEnabled = inventoryUI.gameObject.activeSelf;
@@ -133,6 +140,7 @@ public class UI : MonoBehaviour
     {
         skillTreeUI.transform.SetAsLastSibling();
         SetTooltipsAsLastSibling();
+        screenEffectUI.transform.SetAsLastSibling();
 
         skillTreeEnabled = !skillTreeEnabled;
         skillTreeUI.gameObject.SetActive(skillTreeEnabled);
@@ -145,6 +153,7 @@ public class UI : MonoBehaviour
     {
         inventoryUI.transform.SetAsLastSibling();
         SetTooltipsAsLastSibling();
+        screenEffectUI.transform.SetAsLastSibling();
 
         inventoryEnabled = !inventoryEnabled;
         inventoryUI.gameObject.SetActive(inventoryEnabled);

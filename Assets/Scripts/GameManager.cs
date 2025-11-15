@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour, ISaveable
     private Vector3 lastPlayerPosition;
 
     public string lastScenePlayed;
+    private bool dataLoaded;
 
     private void Awake()
     {
@@ -49,13 +50,24 @@ public class GameManager : MonoBehaviour, ISaveable
 
     private IEnumerator ChangeSceneCo(string sceneName, RespawnType respawnType)
     {
-        // Change level effect
+        UI_ScreenEffect fadeEffect = FindScreenEffectUI();
 
-        yield return new WaitForSeconds(1.5f);
+        // Change level effect
+        FindScreenEffectUI().FadeOut(); // transparent to black
+        yield return fadeEffect.fadeEffectCo;
 
         SceneManager.LoadScene(sceneName);
 
-        yield return new WaitForSeconds(0.5f);
+        dataLoaded = false; // data load become true when load game from save manager
+        yield return null;
+
+        while (dataLoaded == false)
+        {
+            yield return null;
+        }
+
+        fadeEffect = FindScreenEffectUI();
+        fadeEffect.FadeIn(); // black to transparent
 
         Player player = Player.instance;
 
@@ -66,6 +78,14 @@ public class GameManager : MonoBehaviour, ISaveable
 
         if (position != Vector3.zero)
             Player.instance.TeleportPlayer(position);
+    }
+
+    private UI_ScreenEffect FindScreenEffectUI()
+    {
+        if (UI.instance != null)
+            return UI.instance.screenEffectUI;
+        else
+            return FindFirstObjectByType<UI_ScreenEffect>();
     }
 
     private Vector3 GetNewPlayerPosition(RespawnType respawnType)
@@ -129,6 +149,8 @@ public class GameManager : MonoBehaviour, ISaveable
 
         if (string.IsNullOrEmpty(lastScenePlayed))
             lastScenePlayed = "Market";
+
+        dataLoaded = true;
     }
 
     public void SaveData(ref GameData data)
@@ -140,5 +162,6 @@ public class GameManager : MonoBehaviour, ISaveable
 
         data.lastPlayerPosition = Player.instance.transform.position;
         data.lastScenePlayed = currentScene;
+        dataLoaded = false;
     }
 }
