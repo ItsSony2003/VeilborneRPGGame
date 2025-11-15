@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource bgmSource;
 
+    private Transform player;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -20,8 +22,11 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlaySFX(string soundName, AudioSource sfxSource)
+    public void PlaySFX(string soundName, AudioSource sfxSource, float minDistanceToHearSFX = 7)
     {
+        if (player == null)
+            player = Player.instance.transform;
+
         var data = audioDatabase.GetAudio(soundName);
         if (data == null)
         {
@@ -33,9 +38,30 @@ public class AudioManager : MonoBehaviour
         if (clip == null)
             return;
 
-        sfxSource.clip = clip;
+        float maxVolume = data.maxVolume;
+        float distance = Vector2.Distance(sfxSource.transform.position, player.position);
+        float r = Mathf.Clamp01(1- (distance / minDistanceToHearSFX));
+
+        //sfxSource.clip = clip;
         sfxSource.pitch = Random.Range(0.9f, 1.1f);
-        sfxSource.volume = data.volume;
+        sfxSource.volume = Mathf.Lerp(0, maxVolume, r * r); // exponential falloff
+        sfxSource.PlayOneShot(clip);
+    }
+
+    public void PlayGlobalSFX(string soundName)
+    {
+        var data = audioDatabase.GetAudio(soundName);
+        if (data == null)
+            return;
+
+        var clip = data.GetRandomClip();
+        if (clip == null)
+            return;
+
+        Debug.Log("Play Audio " + soundName);
+        //sfxSource.clip = clip;
+        sfxSource.pitch = Random.Range(0.9f, 1.1f);
+        sfxSource.volume = data.maxVolume;
         sfxSource.PlayOneShot(clip);
     }
 }
