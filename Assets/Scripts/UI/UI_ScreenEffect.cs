@@ -10,7 +10,7 @@ public class UI_ScreenEffect : MonoBehaviour
     private void Awake()
     {
         fadeEffectImage = GetComponent<Image>();
-        fadeEffectImage.color = new Color(0, 0, 0, 1);
+        //fadeEffectImage.color = new Color(0, 0, 0, 1);
     }
 
     public void FadeIn(float duration = 1) // black to transparent

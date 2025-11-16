@@ -975,6 +975,8 @@ MonoBehaviour:
   secondWallCheck: {fileID: 0}
   battleMoveSpeed: 8
   attackDistance: 3
+  attackCooldown: 0.2
+  canChasePlayer: 1
   battleTimeDuration: 4
   minRetreatDistance: 1.5
   retreatVelocity: {x: 5, y: 3}

@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,10 +132,10 @@ TextureImporter:
       name: Big-Cultist_Death_10_0
       rect:
         serializedVersion: 2
-        x: 37
+        x: 0
         y: 0
-        width: 37
-        height: 5
+        width: 108
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,33 +150,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Big-Cultist_Death_10_1
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 0
-        width: 31
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e9b1516a853540a0800000000000000
-      internalID: -6898048385793541655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3e1742fc50907ee46b24bb05bf3687a2
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +165,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Big-Cultist_Death_10_0: 283350786360156789
-      Big-Cultist_Death_10_1: -6898048385793541655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

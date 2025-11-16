@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,10 +132,10 @@ TextureImporter:
       name: Cultist-Attack_Death8_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
-        width: 38
-        height: 13
+        width: 45
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,33 +150,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Cultist-Attack_Death8_1
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 9
-        width: 8
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5436bbdbc6d90e030800000000000000
-      internalID: 3521987998968931141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b197b02eb6e1a2546878842cdcfbcd7e
     internalID: 0
     vertices: []
     indices: 
@@ -187,7 +165,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Cultist-Attack_Death8_0: -148920069129898318
-      Cultist-Attack_Death8_1: 3521987998968931141
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
