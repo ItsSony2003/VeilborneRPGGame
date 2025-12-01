@@ -5,7 +5,13 @@ public class Entity_VFX : MonoBehaviour
 {
     protected SpriteRenderer sr;
     private Entity entity;
-    
+
+    [Header("Dash Image Echo VFX")]
+    [Range(0.01f, 0.2f)]
+    [SerializeField] private float imageEchoInterval = 0.05f;
+    [SerializeField] private GameObject targetEchoPrefab;
+    private Coroutine imageEchoCo;
+
     [Header("On Taking Damage VFX")]
     [SerializeField] private Material onDamageMaterial;
     [SerializeField] private float onDamageVFXDuration = .1f;
@@ -28,6 +34,40 @@ public class Entity_VFX : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
         originalMaterial = sr.material;
         originalHitVfxColor = hitVfxColor;
+    }
+
+    public void DoDashImageEchoEffect(float duration)
+    {
+        StopImageEchoEffect();
+        imageEchoCo = StartCoroutine(DashImageEchoEffectCo(duration));
+    }
+
+    public void StopImageEchoEffect()
+    {
+        if (imageEchoCo != null)
+            StopCoroutine(imageEchoCo);
+    }
+
+    private IEnumerator DashImageEchoEffectCo(float duration)
+    {
+        float time = 0;
+        while (time < duration)
+        {
+            CreateImageEcho();
+
+            yield return new WaitForSeconds(imageEchoInterval);
+            time += imageEchoInterval;
+        }
+    }
+
+    private void CreateImageEcho()
+    {
+        Vector3 position = entity.anim.transform.position;
+        float scale = entity.anim.transform.localScale.x;
+
+        GameObject imageEcho = Instantiate(targetEchoPrefab, transform.position, transform.rotation);
+        imageEcho.transform.localScale = new Vector3(scale, scale, scale);
+        imageEcho.GetComponentInChildren<SpriteRenderer>().sprite = sr.sprite;
     }
 
     public void PlayOnStatusVfx(float duration, ElementType element)

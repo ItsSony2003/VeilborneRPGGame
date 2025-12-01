@@ -22,6 +22,7 @@ public class UI : MonoBehaviour
     public UI_InGame inGameUI {  get; private set; }
     public UI_Options optionsUI { get; private set; }
     public UI_Death deathUI { get; private set; }
+    public UI_Victory victoryUI { get; private set; }
 
     public UI_ScreenEffect screenEffectUI { get; private set; }
     #endregion
@@ -45,6 +46,7 @@ public class UI : MonoBehaviour
         inGameUI = GetComponentInChildren<UI_InGame>(true);
         optionsUI = GetComponentInChildren<UI_Options>(true);
         deathUI = GetComponentInChildren<UI_Death>(true);
+        victoryUI = GetComponentInChildren<UI_Victory>(true);
         screenEffectUI = GetComponentInChildren<UI_ScreenEffect>(true);
 
         skillTreeEnabled = skillTreeUI.gameObject.activeSelf;
@@ -86,6 +88,12 @@ public class UI : MonoBehaviour
     public void OpenDeathUI()
     {
         SwitchTo(deathUI.gameObject);
+        input.Disable();
+    }
+
+    public void OpenVictoryUI()
+    {
+        SwitchTo(victoryUI.gameObject);
         input.Disable();
     }
 

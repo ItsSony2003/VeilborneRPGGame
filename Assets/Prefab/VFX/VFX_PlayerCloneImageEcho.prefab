@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6969677893815416694}
   - component: {fileID: 8941536682808023419}
   m_Layer: 0
-  m_Name: VFX_CloneImageEcho
+  m_Name: VFX_PlayerCloneImageEcho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

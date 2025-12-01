@@ -1,11 +1,15 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Enemy : Entity
 {
+    public static event Action OnBossDeath;
+
     public Entity_Stats stats { get; private set; }
     public Entity_Combat combat { get; private set; }
     public Enemy_Health health { get; private set; }
+    public Entity_VFX vfx { get; private set; }
     public Enemy_IdleState idleState;
     public Enemy_MoveState moveState;
     public Enemy_AttackState attackState;
@@ -40,6 +44,9 @@ public class Enemy : Entity
     [SerializeField] private Transform playerCheck;
     [SerializeField] private float playerCheckDistance = 10;
 
+    [Header("Boss Settings")]
+    public bool isBoss = false;
+
     public Transform player { get; private set; }
     public float activeSlowMultiplier { get; private set; } = 1;
 
@@ -53,6 +60,7 @@ public class Enemy : Entity
         health = GetComponent<Enemy_Health>();
         stats = GetComponentInChildren<Entity_Stats>();
         combat = GetComponent<Entity_Combat>();
+        vfx = GetComponent<Entity_VFX>();
     }
 
     public virtual void SpecialAttack()
@@ -83,6 +91,9 @@ public class Enemy : Entity
     public override void EntityDeath()
     {
         base.EntityDeath();
+
+        if (isBoss)
+            OnBossDeath?.Invoke();
 
         stateMachine.ChangeState(deadState);
     }

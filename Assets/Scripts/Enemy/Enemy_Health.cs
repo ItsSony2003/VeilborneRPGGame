@@ -21,4 +21,15 @@ public class Enemy_Health : Entity_Health
 
         return true;
     }
+
+    protected override void Die()
+    {
+        base.Die();
+
+        // only bosses trigger victory UI
+        if (enemy.isBoss)
+        {
+            UI.instance.OpenVictoryUI();
+        }
+    }
 }
