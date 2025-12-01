@@ -16,8 +16,8 @@ TagManager:
   - Enemy
   - PlayerInteractables
   - SkillObjectSword
-  - 
-  - 
+  - EnemyProjectiles
+  - Untouchable
   - 
   - 
   - 

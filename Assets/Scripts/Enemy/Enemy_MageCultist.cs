@@ -5,6 +5,11 @@ public class Enemy_MageCultist : Enemy
     public bool CanBeCountered { get => canBeStunned; }
     public Enemy_MageCultistBattleState mageCultistBattleState { get; set; }
 
+    [Header("Mage Specifics")]
+    [SerializeField] private GameObject fireballPrefab;
+    [SerializeField] private Transform fireballStartPoint;
+    [SerializeField] private float fireballSpeed = 10;
+
     protected override void Awake()
     {
         base.Awake();
@@ -25,6 +30,12 @@ public class Enemy_MageCultist : Enemy
         base.Start();
 
         stateMachine.Initialize(idleState);
+    }
+
+    public override void SpecialAttack()
+    {
+        GameObject newFireball = Instantiate(fireballPrefab, fireballStartPoint.position, Quaternion.identity);
+        newFireball.GetComponent<Enemy_MageFireball>().SetupFireball(fireballSpeed * facingDirection, combat);
     }
 
     public void HandleCounterAtack()

@@ -47,9 +47,6 @@ public class Skill_Base : MonoBehaviour
             return false;
         }
 
-        // mana check
-        // unlock skill check
-
         return true;
     }
 

@@ -5,7 +5,7 @@ public class Enemy_BattleState : EnemyState
     protected Transform player;
     protected Transform lastTarget;
     protected float lastTimeInBattle;
-    protected float lastTimeAttack;
+    protected float lastTimeAttack = float.NegativeInfinity;
 
     public Enemy_BattleState(Enemy enemy, StateMachine stateMachine, string animBoolName) : base(enemy, stateMachine, animBoolName)
     {
@@ -22,10 +22,17 @@ public class Enemy_BattleState : EnemyState
 
         if (ShouldRetreat())
         {
-            rb.linearVelocity = 
-                new Vector2((enemy.retreatVelocity.x * enemy.activeSlowMultiplier) * -DirectionToPlayer(), enemy.retreatVelocity.y);
-            enemy.HandleFlip(DirectionToPlayer());
+            ShortRetreat();
         }
+    }
+
+    protected void ShortRetreat()
+    {
+        float x = (enemy.retreatVelocity.x * enemy.activeSlowMultiplier) * -DirectionToPlayer();
+        float y = enemy.retreatVelocity.y;
+
+        rb.linearVelocity = new Vector2(x, y);
+        enemy.HandleFlip(DirectionToPlayer());
     }
 
     public override void Update()
@@ -48,7 +55,7 @@ public class Enemy_BattleState : EnemyState
         }
         else
         {
-            float xVelocity = enemy.canChasePlayer ? enemy.GetBattleSpeed() : 0.0001f;
+            float xVelocity = enemy.canChasePlayer ? enemy. GetBattleSpeed() : 0.0001f;
             enemy.SetVelocity(xVelocity * DirectionToPlayer(), rb.linearVelocity.y);
         }
     }

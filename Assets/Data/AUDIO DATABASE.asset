@@ -29,11 +29,11 @@ MonoBehaviour:
   mainMenuMusic:
   - audioName: playlist_menu
     clips:
-    - {fileID: 8300000, guid: 7e39e7ff732af7543a83035f7281d5eb, type: 3}
-    maxVolume: 0.55
+    - {fileID: 8300000, guid: 229f1d7d7ee649a43b32960a8518535c, type: 3}
+    maxVolume: 0.4
   levelMusic:
   - audioName: playlist_whisperingSpores
     clips:
-    - {fileID: 8300000, guid: e52d1212e05cc3d41829daae1dde1bda, type: 3}
-    maxVolume: 0.55
+    - {fileID: 8300000, guid: c8cd3b9ff2b1e9548b10ca655410b5a8, type: 3}
+    maxVolume: 0.4
   bossMusic: []

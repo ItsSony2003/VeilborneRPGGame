@@ -459,6 +459,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   counterRecovery: 0.3
+  whatIsCounterable:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &7629946473034287993
 MonoBehaviour:
   m_ObjectHideFlags: 0

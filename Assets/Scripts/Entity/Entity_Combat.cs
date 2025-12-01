@@ -28,7 +28,7 @@ public class Entity_Combat : MonoBehaviour
     {
         bool targetGotHit = false;
 
-        foreach (var target in GetDetectionColliders())
+        foreach (var target in GetDetectionColliders(whatIsTarget))
         {
             IDamageable damageable = target.GetComponent<IDamageable>();
 
@@ -59,9 +59,41 @@ public class Entity_Combat : MonoBehaviour
             sfx?.PlayAttackMiss();
     }
 
-    protected Collider2D[] GetDetectionColliders()
+    public void PerformAttackOnTarget(Transform target)
     {
-        return Physics2D.OverlapCircleAll(targetCheck.position, targetCheckRadius, whatIsTarget);
+        bool targetGotHit = false;
+
+        IDamageable damageable = target.GetComponent<IDamageable>();
+
+        if (damageable == null)
+            return;
+
+        AttackData attackData = stats.GetAttackData(basicAttackScale);
+        Entity_StatusHandler statusHandler = target.GetComponent<Entity_StatusHandler>();
+
+        float physicalDamage = attackData.physicalDamage;
+        float elementalDamage = attackData.elementalDamage;
+        ElementType element = attackData.element;
+
+        targetGotHit = damageable.TakeDamage(physicalDamage, elementalDamage, element, transform);
+
+        if (element != ElementType.None)
+            statusHandler?.ApplyStatusEffect(element, attackData.effectData);
+
+        if (targetGotHit)
+        {
+            OnDoingPhysicalDamage?.Invoke(physicalDamage);
+            vfx.CreateOnHitVFX(target.transform, attackData.isCrit, element);
+            sfx?.PlayAttackHit();
+        }
+
+        if (targetGotHit == false)
+            sfx?.PlayAttackMiss();
+    }
+
+    protected Collider2D[] GetDetectionColliders(LayerMask whatToDetect)
+    {
+        return Physics2D.OverlapCircleAll(targetCheck.position, targetCheckRadius, whatToDetect);
     }
 
     private void OnDrawGizmos()

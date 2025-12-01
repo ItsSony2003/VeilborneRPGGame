@@ -49,11 +49,10 @@ public class Enemy_MageCultistBattleState : Enemy_BattleState
                 stateMachine.ChangeState(enemy.attackState);
             }
         }
-
         else
         {
             // walks away from player
-            bool walkAway = reachedDeadend == false && DirectionToPlayer() < (enemy.attackDistance * 0.7f);
+            bool walkAway = reachedDeadend == false && DistanceToPlayer() < (enemy.attackDistance * .7f);
 
             if (walkAway)
             {
