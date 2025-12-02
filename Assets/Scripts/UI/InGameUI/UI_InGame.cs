@@ -12,6 +12,7 @@ public class UI_InGame : MonoBehaviour
     [SerializeField] private RectTransform healthRect;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private float maxBarWidth = 400f;
 
     [Header("Quick Item Slots")]
     [SerializeField] private float yOffsetQuickItemParent = 120f;
@@ -87,10 +88,17 @@ public class UI_InGame : MonoBehaviour
     {
         float currentHealth = Mathf.RoundToInt(player.health.GetCurrentHealth());
         float maxHealth = player.stats.GetMaxHealth();
-        float healthSizeDifference = Mathf.Abs(maxHealth - healthRect.sizeDelta.x);
 
-        if (healthSizeDifference > 0.1f)
-            healthRect.sizeDelta = new Vector2(maxHealth, healthRect.sizeDelta.y);
+        // clamp the bar width
+        float targetWidth = Mathf.Min(maxHealth + 100f, maxBarWidth);
+        float widthDifference = Mathf.Abs(targetWidth - healthRect.sizeDelta.x);
+
+        if (widthDifference > 0.1f)
+            healthRect.sizeDelta = new Vector2(targetWidth, healthRect.sizeDelta.y);
+        //float healthSizeDifference = Mathf.Abs(maxHealth - healthRect.sizeDelta.x);
+
+        //if (healthSizeDifference > 0.1f)
+        //    healthRect.sizeDelta = new Vector2(maxHealth, healthRect.sizeDelta.y);
 
         healthText.text = currentHealth + "/" + maxHealth;
         healthSlider.value = player.health.GetHealthPercent();

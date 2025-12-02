@@ -1151,6 +1151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43636ad929521dc4881b9c67d5bd58e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageEchoInterval: 0.05
+  targetEchoPrefab: {fileID: 0}
   onDamageMaterial: {fileID: 2100000, guid: 4916857037c8345498fc2077c3d15d65, type: 2}
   onDamageVFXDuration: 0.1
   hitVfxColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1175,7 +1177,7 @@ MonoBehaviour:
   defaultStatSetup: {fileID: 11400000, guid: b7a82cc0f5fc06748a2ed9f46b97b1bf, type: 2}
   resources:
     maxHealth:
-      baseValue: 100
+      baseValue: 80
       modifiers: []
     healthRegen:
       baseValue: 0
@@ -1320,6 +1322,7 @@ MonoBehaviour:
     m_Bits: 128
   playerCheck: {fileID: 5981666290218377006}
   playerCheckDistance: 15
+  isBoss: 0
   fireballPrefab: {fileID: 6341324018851570579, guid: 59a0fb52da7fe3f408490da193ab7f10, type: 3}
   fireballStartPoint: {fileID: 2107005605390775905}
   fireballSpeed: 10

@@ -2327,7 +2327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aff05bd92155624e8b30a41487f4542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillPoints: 30
+  skillPoints: 0
   skillPointsText: {fileID: 2386624393371501609}
   parentNodes:
   - {fileID: 2298592489717209658}
@@ -5245,6 +5245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredNodes:
   - {fileID: 6498548386821543439}
+  - {fileID: 5707234142150142760}
   conflictedNodes:
   - {fileID: 3763185588709687490}
   isUnlocked: 0
@@ -16249,6 +16250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredNodes:
   - {fileID: 6498548386821543439}
+  - {fileID: 6925347491950781795}
   conflictedNodes:
   - {fileID: 6688115291274696515}
   isUnlocked: 0
@@ -31067,7 +31069,8 @@ MonoBehaviour:
   healthRect: {fileID: 4957532798834838308}
   healthSlider: {fileID: 5971295158906471119}
   healthText: {fileID: 933994107018761674}
-  yOffsetQuickItemParent: 0
+  maxBarWidth: 800
+  yOffsetQuickItemParent: 180
   quickItemOptionsParent: {fileID: 8233758478896391866}
 --- !u!1 &3300346762622238301
 GameObject:

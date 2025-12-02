@@ -505,7 +505,7 @@ MonoBehaviour:
   - itemData: {fileID: 0}
     stackSize: 0
     itemEffect: {fileID: 0}
-  gold: 100000
+  gold: 0
 --- !u!114 &6508671463380256198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a95a00ee65f4a046982438e1594bf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageEchoInterval: 0.1
+  targetEchoPrefab: {fileID: 4020340099236259305, guid: d4aa186d26a7ec540b9e53d019dc28e6, type: 3}
   onDamageMaterial: {fileID: 2100000, guid: 4916857037c8345498fc2077c3d15d65, type: 2}
   onDamageVFXDuration: 0.1
   hitVfxColor: {r: 1, g: 1, b: 1, a: 1}
@@ -538,8 +540,6 @@ MonoBehaviour:
   slowVfx: {r: 0, g: 1, b: 1, a: 1}
   fireVfx: {r: 1, g: 0, b: 0, a: 1}
   lightningVfx: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  imageEchoInterval: 0.1
-  targetEchoPrefab: {fileID: 4020340099236259305, guid: d4aa186d26a7ec540b9e53d019dc28e6, type: 3}
 --- !u!114 &6153896890387335490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
   defaultStatSetup: {fileID: 11400000, guid: 9db8de1490df0d645be92e77b7d9fce9, type: 2}
   resources:
     maxHealth:
-      baseValue: 100
+      baseValue: 10000
       modifiers: []
     healthRegen:
       baseValue: 0
