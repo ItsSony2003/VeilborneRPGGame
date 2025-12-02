@@ -16,10 +16,10 @@ public class Object_ShopMerchant : Object_NPC, IInteractable
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            shop.FillShopList();
-        }
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    shop.FillShopList();
+        //}
     }
 
     public void Interact()

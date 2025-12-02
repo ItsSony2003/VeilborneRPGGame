@@ -122,17 +122,28 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     public void ReduceHealth(float damage)
     {
+        if (isDead)
+            return;
+
         currentHealth -= damage;
         entityVfx?.PlayOnDamageVfx();
         OnHealthUpdate?.Invoke();
 
         if (currentHealth <= 0)
+        {
+            currentHealth = 0;
             Die();
+        }
     }
 
     protected virtual void Die()
     {
+        if (isDead) // already processed death, ignore
+            return;
+
         isDead = true;
+        currentHealth = 0; // clamp just to be safe
+
         entity.EntityDeath();
         itemDropManager?.DropItems();
 
@@ -153,7 +164,13 @@ public class Entity_Health : MonoBehaviour, IDamageable
 
     private void UpdateHealthBar()
     {
-        if (healthBar == null && healthBar.transform.parent.gameObject.activeSelf == false)
+        //if (healthBar == null && healthBar.transform.parent.gameObject.activeSelf == false)
+        //    return;
+
+        if (healthBar == null)
+            return;
+
+        if (!healthBar.transform.parent.gameObject.activeSelf)
             return;
 
         healthBar.value = currentHealth / entityStats.GetMaxHealth();

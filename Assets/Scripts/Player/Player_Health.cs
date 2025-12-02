@@ -15,8 +15,8 @@ public class Player_Health : Entity_Health, ISaveable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-            Die();
+        //if (Input.GetKeyDown(KeyCode.B))
+        //    Die();
     }
 
     protected override void Die()
