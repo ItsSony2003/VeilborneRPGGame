@@ -136,9 +136,9 @@ public class Entity_Health : MonoBehaviour, IDamageable
         entity.EntityDeath();
         itemDropManager?.DropItems();
 
-        // disable healthbar (CAN BE USED LATER)
-        //if (healthBar != null)
-        //    healthBar.gameObject.SetActive(false);
+        // disable healthbar(CAN BE USED LATER)
+        if (healthBar != null)
+            healthBar.gameObject.SetActive(false);
     }
 
     public float GetHealthPercent() => currentHealth / entityStats.GetMaxHealth();

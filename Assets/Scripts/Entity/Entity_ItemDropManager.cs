@@ -14,8 +14,8 @@ public class Entity_ItemDropManager : MonoBehaviour
     // TESTING
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.X))
-            DropItems();
+        //if (Input.GetKeyUp(KeyCode.X))
+        //    DropItems();
     }
 
     public virtual void DropItems()

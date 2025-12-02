@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameData
 {
     public int gold;
+    public float currentHealthPercent;
 
     public List<Inventory_Item> itemList;
     public SerializableDictionary<string, int> inventory; // itemSaveId -> stackSize

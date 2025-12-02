@@ -31,5 +31,7 @@ public class Enemy_Health : Entity_Health
         {
             UI.instance.OpenVictoryUI();
         }
+
+        Destroy(gameObject, 3);
     }
 }

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33c3a7dc977e79439120aa14d1ccda5, type: 3}
   m_Name: Consumable Data - Veil Nexus
   m_EditorClassIdentifier: 
-  itemPrice: 100
+  itemPrice: 200
   minStackSizeAtShop: 1
   maxStackSizeAtShop: 1
-  itemRarity: 100
-  dropChance: 70
-  maxDropChance: 70
+  itemRarity: 791
+  dropChance: 21
+  maxDropChance: 40
   craftRequirements: []
   itemName: Veil Nexus
   itemIcon: {fileID: -3218350527575650075, guid: 07c904365e999d54ea3ba2e15f64497c, type: 3}
